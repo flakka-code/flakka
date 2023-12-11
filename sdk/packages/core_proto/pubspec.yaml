@@ -1,0 +1,14 @@
+name: core_proto
+description: Shared proto
+version: 0.1.0+1
+
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies: 
+  grpc: 
+
+dev_dependencies: 
+  core_analysis: 
+  test: ^1.19.2

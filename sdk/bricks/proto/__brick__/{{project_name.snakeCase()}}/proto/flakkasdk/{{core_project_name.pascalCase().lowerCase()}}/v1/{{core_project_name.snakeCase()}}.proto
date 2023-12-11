@@ -1,0 +1,3 @@
+syntax = 'proto3';
+
+package flakkasdk.{{core_project_name.pascalCase().lowerCase()}}.v1;

@@ -1,0 +1,9 @@
+syntax = 'proto3';
+
+package flakkasdk.application.v1;
+
+
+service ApplicationService {
+  rpc execute(ApplicationRequest) returns (ApplicationResponse);
+  rpc fetchState(FetchStateRequest) returns (stream FetchStateResponse);
+}

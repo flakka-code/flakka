@@ -1,0 +1,12 @@
+# melos_managed_dependency_overrides: core_analysis,core_persistence,core_server,core_persistence_proto,core_proto
+dependency_overrides:
+  core_analysis:
+    path: ../core_analysis
+  core_persistence:
+    path: ../core_persistence
+  core_persistence_proto:
+    path: ../core_persistence_proto
+  core_proto:
+    path: ../core_proto
+  core_server:
+    path: ../core_server

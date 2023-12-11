@@ -1,0 +1,16 @@
+index_generator:
+  exclude:
+    - '**.*.dart'
+  indexes:
+    - path: lib
+      name: core_server_api
+      include:
+        - src/api
+    - path: lib
+      name: core_server_base
+      include:
+        - src/base
+    - path: lib
+      name: core_server
+      include:
+        - src/core

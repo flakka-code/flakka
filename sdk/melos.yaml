@@ -1,0 +1,7 @@
+name: core_sdk
+
+ide:
+  intellij:
+    moduleNamePrefix: ''
+packages:
+  - packages/**

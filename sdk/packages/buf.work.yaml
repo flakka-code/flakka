@@ -1,0 +1,5 @@
+version: v1
+directories:
+  - core_persistence_proto/proto
+  - core_proto/proto/dartoptions
+  - core_proto/proto/googleapis

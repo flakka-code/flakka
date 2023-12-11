@@ -1,0 +1,15 @@
+name: core_persistence_proto
+description: Persistence for Core Object
+version: 0.1.0+1
+
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies: 
+  core_proto: 
+  grpc: 
+
+dev_dependencies: 
+  core_analysis: 
+  test: ^1.19.2

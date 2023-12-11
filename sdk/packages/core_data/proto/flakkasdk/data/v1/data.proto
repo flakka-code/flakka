@@ -1,0 +1,10 @@
+syntax = 'proto3';
+
+package flakkasdk.data.v1;
+
+service DataService {
+  rpc append(DataAppendRequest) returns (DataAppendResponse);
+  rpc fetchEntries(FetchEntriesRequest) returns (FetchEntriesResponse);
+  rpc getStateRefs(GetStateRefsRequest) returns (GetStateRefsResponse);
+  rpc getState(GetStateRequest) returns (GetStateResponse);
+}

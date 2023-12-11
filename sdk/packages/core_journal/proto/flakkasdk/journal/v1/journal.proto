@@ -1,0 +1,10 @@
+syntax = 'proto3';
+
+package flakkasdk.journal.v1;
+
+
+service JournalService {
+  rpc append(JournalAppendRequest) returns (JournalAppendResponse);
+  rpc fetchStateEvents(FetchStateEventsRequest) returns (FetchStateEventsResponse);
+  rpc getHead(GetHeadRequest) returns (GetHeadResponse);
+}

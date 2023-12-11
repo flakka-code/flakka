@@ -1,0 +1,8 @@
+name: sdk
+publish_to: none
+
+environment:
+  sdk: ^3.3.0-91.0.dev
+
+dev_dependencies:
+  melos:
