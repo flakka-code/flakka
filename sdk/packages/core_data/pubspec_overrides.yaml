@@ -1,6 +1,0 @@
-# melos_managed_dependency_overrides: core_analysis,core_object
-dependency_overrides:
-  core_analysis:
-    path: ../core_analysis
-  core_object:
-    path: ../core_object

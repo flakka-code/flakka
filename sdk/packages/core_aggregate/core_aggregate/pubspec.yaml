@@ -1,5 +1,5 @@
-name: core_runner
-description: Persistence for Core Object
+name: core_aggregate
+description: An interface for interacting with typed data
 version: 0.1.0+1
 
 
@@ -7,7 +7,8 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies: 
-  core_server:
+  core_aggregate_api:
+  http2: 
   grpc: 
 
 dev_dependencies: 

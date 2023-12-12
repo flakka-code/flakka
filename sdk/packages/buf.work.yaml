@@ -1,5 +1,6 @@
 version: v1
 directories:
-  - core_persistence_proto/proto
-  - core_proto/proto/dartoptions
-  - core_proto/proto/googleapis
+#  - core_persistence_proto/proto
+  - core_aggregate/core_aggregate_api/proto/dart_options
+  - core_aggregate/core_aggregate_api/proto/core_sdk
+  - core_aggregate/core_aggregate_api/proto/google_apis
