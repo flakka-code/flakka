@@ -5,39 +5,44 @@ import 'package:test/test.dart';
 
 void main() {
   test('can be instantiated', () async {
-    final reader = await PackageAssetReader.currentIsolate(
-        rootPackage: 'core_aggregate_api');
-    // print(await reader.canRead(AssetId.parse('core_aggregate_builder|test/generated/test/example1/example.pbserver.dart')));
-    final content = (await reader.readAsString(AssetId.parse(
-        'core_aggregate_api|test/generated/test/example1/example.pbgrpc.dart')));
-    // print(content);
+    const rootPackage = 'core_aggregate_api';
+    final reader =
+        await PackageAssetReader.currentIsolate(rootPackage: rootPackage);
+    const target =
+        '$rootPackage|test/generated/test/simple/echo.pbgrpc.dart';
+    final expectedOutput =
+        target.replaceFirst(RegExp(r'\.pbgrpc\.dart$'), '.coresdk.dart');
     await testBuilder(
       ApiBuilder(),
       {
-        'core_aggregate_api|test/generated/test/example1/example.pbgrpc.dart':
-            content
-      },outputs: {'core_aggregate_api|test/generated/test/example1/example.coresdk.dart':_expectedResult},
-      // generateFor: {
-      //   'core_aggregate_builder|test/generated/test/example1/example.pbserver.dart'
-      // },
-      reader: await PackageAssetReader.currentIsolate(
-          rootPackage: 'core_aggregate_api'),
+        target: await reader.readAsString(AssetId.parse(target)),
+      },
+      reader: reader,
+      outputs: {
+        expectedOutput: _expectedResult,
+      },
     );
     expect(ApiBuilder(), isNotNull);
   });
 }
-const _expectedResult = '// ignore_for_file: no_leading_underscores_for_library_prefixes\n'
-    'import \'asset:core_aggregate_api/test/generated/test/example1/example.pbgrpc.dart\'\n'
-    '    as _i1;\n'
+
+const _expectedResult =
+    '// ignore_for_file: no_leading_underscores_for_library_prefixes\n'
+    'import \'echo.pbgrpc.dart\' as _i1;\n'
+    'import \'echo.pb.dart\' as _i2;\n'
+    'import \'stream.dart\' as _i3;\n'
     '\n'
-    'class BService<Adapter extends BAdapterBase> extends _i1.BServiceBase {\n'
-    '  BService(BAdapterProviderBase<Adapter> adapterProvider)\n'
+    'class EchoService<Adapter extends EchoAdapterBase> extends _i1.EchoServiceBase {\n'
+    '  EchoService(EchoAdapterProviderBase<Adapter> adapterProvider)\n'
     '      : _adapterProvider = adapterProvider;\n'
     '\n'
-    '  final BAdapterProviderBase<Adapter> _adapterProvider;\n'
+    '  final EchoAdapterProviderBase<Adapter> _adapterProvider;\n'
     '}\n'
     '\n'
-    'class BAdapterBase {}\n'
+    'class EchoAdapterBase {\n'
+    '  Future<_i2.EchoResponse> echo(Future<_i2.EchoRequest> request);\n'
+    '  Stream<_i3.ServerStreamingEchoResponse> serverStreamingEcho(Stream<_i3.ServerStreamingEchoRequest> request);\n'
+    '}\n'
     '\n'
-    'class BAdapterProviderBase<Adapter extends BAdapterBase> {}\n'
+    'class EchoAdapterProviderBase<Adapter extends EchoAdapterBase> {}\n'
     '';
