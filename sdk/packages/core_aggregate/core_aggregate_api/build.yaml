@@ -1,5 +1,11 @@
 builders:
-  my_builder:
+  api_builder_dependents:
+    import: "package:core_aggregate_api/src/builder/api_builder.dart"
+    builder_factories: ["ApiBuilder.new"]
+    build_extensions: {".pbgrpc.dart": [".coresdk.dart"]}
+    auto_apply: dependents
+    build_to: source
+  api_builder_root_package:
     import: "package:core_aggregate_api/src/builder/api_builder.dart"
     builder_factories: ["ApiBuilder.new"]
     build_extensions: {".pbgrpc.dart": [".coresdk.dart"]}

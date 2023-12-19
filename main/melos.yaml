@@ -1,0 +1,13 @@
+name: flakka
+
+ide:
+  intellij:
+    moduleNamePrefix: ''
+packages:
+  - packages/**
+ignore:
+  - packages/core_aggregate/core_aggregate_api/test/**
+command:
+  bootstrap:
+    dependencyOverridePaths:
+      - ../sdk/packages/**

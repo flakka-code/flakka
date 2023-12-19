@@ -1,20 +1,56 @@
-syntax = 'proto2';
+syntax = 'proto3';
 package test.example1;
 
 import 'google/protobuf/descriptor.proto';
 //import 'google/protobuf/'
-
+import 'bestowcode/core_sdk_options.proto';
 service B {
   rpc  Get(Request) returns (Response);
 }
 message Request {}
 message Response {}
 message A {
-  option (greeting) = 'hello world';
+  //  option (greeting) = 'hello world';
 }
-extend google.protobuf.MessageOptions {
-  // Applies the named mixin.
-  // For now, "PbMapMixin" is the only available mixin.
-  // The empty string can be used to turn off mixins for this message.
-  optional string greeting = 9674483;
+message ComplexType {
+  message InnerType {
+    oneof one_of_1 {
+      string string_val = 1;
+      int32 int_val = 2;
+    }
+    oneof one_of_2 {
+      string string_val_2 = 3 ;
+      int32 int_val_3 = 4;
+
+    }
+  }
+  InnerType inner_type1 = 1;
+  InnerType inner_type2 = 2;
+
 }
+//extend google.protobuf.MessageOptions {
+//  // Applies the named mixin.
+//  // For now, "PbMapMixin" is the only available mixin.
+//  // The empty string can be used to turn off mixins for this message.
+//  optional string greeting = 9674483;
+//}
+//extend google.protobuf.FieldOptions {
+//  optional bool entity_ref = 9674484 [default = false];
+//  optional bool entity_state = 9674484;
+//  optional bool entity_event = 9674485;
+//  optional bool entity_view = 9674486;
+////  extension
+//}
+
+message TaskId {
+  string value = 1 [(bestowcode.entity_id) = true];
+
+}
+//message GreetingEntityState {
+//  GreetingId greeting_id = 1 [(bestowcode.entity_ref) = true];
+//
+//}
+//
+//message GreetingState {
+//  string value =1;
+//}

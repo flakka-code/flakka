@@ -4,6 +4,19 @@ package bestowcode.coresdk.application.v1;
 
 
 service ApplicationService {
-//  rpc execute(ApplicationRequest) returns (ApplicationResponse);
+  rpc execute(ApplicationRequest) returns (ApplicationResponse);
 //  rpc fetchState(FetchStateRequest) returns (stream FetchStateResponse);
+}
+
+message ApplicationRequest {
+  message Append {
+    message Event {}
+    message Forward {}
+    message Merge {}
+  }
+  message Publish {}
+  oneof body {
+    Append append = 1;
+    Publish publish = 2;
+  }
 }

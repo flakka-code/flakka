@@ -1,0 +1,18 @@
+syntax = 'proto2';
+package flakka;
+
+import 'google/protobuf/descriptor.proto';
+import 'google/protobuf/compiler/plugin.proto';
+
+
+extend google.protobuf.FileOptions {
+  optional bool descriptors = 97127510;
+}
+extend google.protobuf.MessageOptions {
+  optional bool entity_key = 45434298;
+
+}
+extend google.protobuf.FieldOptions {
+  optional  bool  entity_ref = 77283208;
+  optional  bool entity_event = 91955279;
+}

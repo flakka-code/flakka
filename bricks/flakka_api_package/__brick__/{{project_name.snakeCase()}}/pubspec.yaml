@@ -1,0 +1,14 @@
+name: {{project_name.snakeCase()}}
+description: {{{description}}}
+version: 0.1.0+1
+{{^publishable}}publish_to: none{{/publishable}}
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flakka_api:
+dev_dependencies:
+  flakka_api_generator:
+  lint: ^2.0.0 
+  test:

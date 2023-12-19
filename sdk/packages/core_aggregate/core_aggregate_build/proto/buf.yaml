@@ -1,0 +1,14 @@
+version: v1
+breaking:
+  use:
+    - FILE
+lint:
+  use:
+    - DEFAULT
+deps: []
+build:
+  excludes:
+    - google
+#deps:
+#  - buf.build/googleapis/googleapis
+#  - buf.build/protocolbuffers/wellknowntypes

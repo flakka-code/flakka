@@ -1,0 +1,3 @@
+syntax = 'proto3';
+
+package acmeapis.app1.v1;

@@ -1,0 +1,7 @@
+version: v1
+directories:
+  - example/packages/acmeapis-dart/proto
+  - example/protos/acmeapis/proto
+  - example/protos/acmeinternal/proto
+  - sdk/protos/dartoptions/proto
+  - sdk/protos/coresdk/proto

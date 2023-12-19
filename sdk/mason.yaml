@@ -2,4 +2,4 @@ bricks:
   package:
     path: bricks/package
   proto:
-    path: bricks/proto
+    path: bricks/protos

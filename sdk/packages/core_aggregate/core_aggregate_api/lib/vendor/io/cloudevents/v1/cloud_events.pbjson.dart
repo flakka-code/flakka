@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: io/cloudevents/v1/cloud_events.proto
+//  source: io/cloudevents/v1/cloud_events.protos
 //
 // @dart = 2.12
 
@@ -87,4 +87,3 @@ const CloudEventBatch$json = {
 final $typed_data.Uint8List cloudEventBatchDescriptor = $convert.base64Decode(
     'Cg9DbG91ZEV2ZW50QmF0Y2gSNQoGZXZlbnRzGAEgAygLMh0uaW8uY2xvdWRldmVudHMudjEuQ2'
     'xvdWRFdmVudFIGZXZlbnRz');
-

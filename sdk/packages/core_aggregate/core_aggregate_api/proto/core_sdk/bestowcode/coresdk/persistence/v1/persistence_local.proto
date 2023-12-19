@@ -5,7 +5,7 @@ package bestowcode.coresdk.persistence.v1;
 import 'google/protobuf/any.proto';
 import 'google/protobuf/timestamp.proto';
 import 'google/protobuf/dart_options.proto';
-import 'bestowcode/coresdk/options/core_sdk_options.proto';
+import 'bestowcode/coresdk/options/core_sdk_options.protos';
 
 option (dart_options.imports) = {mixins: {import_from: 'package:core_proto/google/protobuf/timestamp.pb.dart', name: 'Timestamp'}};
 service PersistenceLocalService {

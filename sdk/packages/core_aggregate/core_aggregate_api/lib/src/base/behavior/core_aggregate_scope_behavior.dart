@@ -1,0 +1,58 @@
+import 'package:core_aggregate/core_aggregate.dart';
+import 'package:core_application/core_application.dart';
+
+abstract interface class CoreScopeBehavior<
+        ScopeAdapter extends CoreScopeAdapter<
+            ScopeView,
+            ScopeRequest,
+            CollectionAdapter,
+            CollectionView,
+            CollectionRequest,
+            EntityAdapter,
+            EntityView,
+            EntityRequest,
+            EntityRef>,
+        ScopeHandle extends CoreScopeHandle<
+            ScopeRequest,
+            ScopeEvent,
+            ScopeState,
+            CollectionHandle,
+            CollectionRequest,
+            CollectionEvent,
+            CollectionState,
+            EntityHandle,
+            EntityRequest,
+            EntityEvent,
+            EntityState,
+            EntityRef>,
+        ScopeView extends CoreScopeView<CollectionView, EntityView, EntityRef>,
+        ScopeRequest extends CoreScopeRequest<CollectionRequest, EntityRequest,
+            EntityRef>,
+        ScopeEvent extends CoreScopeEvent<CollectionEvent, EntityEvent, EntityRef>,
+        ScopeState extends CoreScopeState<CollectionState, EntityState, EntityRef>,
+        CollectionAdapter extends CoreCollectionAdapter<CollectionView,
+            CollectionRequest, EntityAdapter, EntityView, EntityRequest, EntityRef>,
+        CollectionHandle extends CoreCollectionHandle<
+            CollectionRequest,
+            CollectionEvent,
+            CollectionState,
+            EntityHandle,
+            EntityRequest,
+            EntityEvent,
+            EntityState,
+            EntityRef>,
+        CollectionView extends CoreCollectionView<EntityView, EntityRef>,
+        CollectionRequest extends CoreCollectionRequest<EntityRequest, EntityRef>,
+        CollectionEvent extends CoreCollectionEvent<EntityEvent, EntityRef>,
+        CollectionState extends CoreCollectionState<EntityState, EntityRef>,
+        EntityHandle extends CoreEntityHandle<EntityRequest, EntityEvent,
+            EntityState>,
+        EntityAdapter extends CoreEntityAdapter<EntityView, EntityRequest>,
+        EntityRequest extends CoreEntityRequest,
+        EntityEvent extends CoreEntityEvent,
+        EntityState extends CoreEntityState,
+        EntityView extends CoreEntityView,
+        EntityRef extends CoreEntityRef>
+    implements
+        EventSourcedBehavior<ScopeAdapter, ScopeHandle, ScopeView, ScopeRequest,
+            ScopeEvent, ScopeState> {}

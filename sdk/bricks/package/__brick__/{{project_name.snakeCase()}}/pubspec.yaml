@@ -6,8 +6,7 @@ version: 0.1.0+1
 environment:
   sdk: ">=3.0.0 <4.0.0"
 
-dependencies: {{#dependencies}}
-  {{package}}: {{version}}{{/dependencies}}
-
-dev_dependencies: {{#dev_dependencies}}
-  {{package}}: {{version}}{{/dev_dependencies}}
+dev_dependencies:
+  mocktail: ^1.0.0
+  test:
+  core_analysis: 

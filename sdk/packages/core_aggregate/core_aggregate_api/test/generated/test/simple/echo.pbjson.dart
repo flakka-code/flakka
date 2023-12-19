@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: test/simple/echo.proto
+//  source: test/simple/echo.protos
 //
 // @dart = 2.12
 
@@ -36,33 +36,3 @@ const EchoResponse$json = {
 /// Descriptor for `EchoResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List echoResponseDescriptor = $convert.base64Decode(
     'CgxFY2hvUmVzcG9uc2USGAoHbWVzc2FnZRgBIAEoCVIHbWVzc2FnZQ==');
-
-@$core.Deprecated('Use serverStreamingEchoRequestDescriptor instead')
-const ServerStreamingEchoRequest$json = {
-  '1': 'ServerStreamingEchoRequest',
-  '2': [
-    {'1': 'message', '3': 1, '4': 1, '5': 9, '10': 'message'},
-    {'1': 'message_count', '3': 2, '4': 1, '5': 5, '10': 'messageCount'},
-    {'1': 'message_interval', '3': 3, '4': 1, '5': 5, '10': 'messageInterval'},
-  ],
-};
-
-/// Descriptor for `ServerStreamingEchoRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List serverStreamingEchoRequestDescriptor = $convert.base64Decode(
-    'ChpTZXJ2ZXJTdHJlYW1pbmdFY2hvUmVxdWVzdBIYCgdtZXNzYWdlGAEgASgJUgdtZXNzYWdlEi'
-    'MKDW1lc3NhZ2VfY291bnQYAiABKAVSDG1lc3NhZ2VDb3VudBIpChBtZXNzYWdlX2ludGVydmFs'
-    'GAMgASgFUg9tZXNzYWdlSW50ZXJ2YWw=');
-
-@$core.Deprecated('Use serverStreamingEchoResponseDescriptor instead')
-const ServerStreamingEchoResponse$json = {
-  '1': 'ServerStreamingEchoResponse',
-  '2': [
-    {'1': 'message', '3': 1, '4': 1, '5': 9, '10': 'message'},
-  ],
-};
-
-/// Descriptor for `ServerStreamingEchoResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List serverStreamingEchoResponseDescriptor = $convert.base64Decode(
-    'ChtTZXJ2ZXJTdHJlYW1pbmdFY2hvUmVzcG9uc2USGAoHbWVzc2FnZRgBIAEoCVIHbWVzc2FnZQ'
-    '==');
-

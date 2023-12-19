@@ -2,9 +2,12 @@ syntax = 'proto3';
 
 package bestowcode.coresdk.journal.v1;
 
-
+import "google/protobuf/core_sdk_options.proto";
 service JournalService {
-//  rpc append(JournalAppendRequest) returns (JournalAppendResponse);
-//  rpc fetchStateEvents(FetchStateEventsRequest) returns (FetchStateEventsResponse);
-//  rpc getHead(GetHeadRequest) returns (GetHeadResponse);
+  //  rpc append(JournalAppendRequest) returns (JournalAppendResponse);
+  //  rpc fetchStateEvents(FetchStateEventsRequest) returns (FetchStateEventsResponse);
+  //  rpc getHead(GetHeadRequest) returns (GetHeadResponse);
+}
+message A {
+  string b = 1 [coresdk.entity_ref = true];
 }

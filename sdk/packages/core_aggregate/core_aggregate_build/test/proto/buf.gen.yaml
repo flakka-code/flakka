@@ -3,7 +3,13 @@ version: v1
 managed:
   enabled: true
 plugins:
-  - plugin: buf.build/protocolbuffers/dart:v21.1.2
-    out: ../generated
+#  - plugin: buf.build/protocolbuffers/dart:v21.1.2
+#    out: ../generated
+#    opt:
+#      - grpc
+  - plugin: flakkadart
+    out: ../generated2
+    path: ../../bin/protoc-gen-flakkadart
+    strategy: all
     opt:
       - grpc

@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: io/cloudevents/v1/cloud_events.proto
+//  source: io/cloudevents/v1/cloud_events.protos
 //
 // @dart = 2.12
 

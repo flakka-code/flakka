@@ -1,0 +1,20 @@
+syntax = 'proto3';
+package example.scope1.v1;
+
+import "google/protobuf/any.proto";
+import "dart_options/dart_options.proto";
+option (dart_options.imports) = {mixins: {name: 'CoreEvent', import_from: 'package:flakka/flakka_core.dart'}};
+
+message WidgetEvent {
+  message Add {
+    string value = 1;
+  }
+  oneof body {
+    Add add = 1;
+  }
+  option (dart_options.mixin) = 'CoreEvent';
+}
+message WidgetCollectionEvent {
+  string entity_id = 2;
+  repeated WidgetEvent event = 3;
+}

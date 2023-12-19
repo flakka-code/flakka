@@ -1,5 +1,5 @@
 name: core_aggregate_api
-description: Shared proto
+description: Core interface for defining an aggregate api
 version: 0.1.0+1
 
 
@@ -9,6 +9,7 @@ dependencies:
   analyzer:
   build:
   code_builder:
+  collection:
   dart_style:
   grpc:
   meta:
