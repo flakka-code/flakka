@@ -1,6 +1,8 @@
-# melos_managed_dependency_overrides: core_analysis,core_aggregate_api
+# melos_managed_dependency_overrides: core_analysis,core_aggregate_api,core_application
 dependency_overrides:
   core_aggregate_api:
     path: ../core_aggregate_api
   core_analysis:
     path: ../../core_analysis
+  core_application:
+    path: ../../core_application
