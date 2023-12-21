@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:path/path.dart' as p;
+import 'package:protocolbuffers_wellknowntypes/google/protobuf/descriptor.pb.dart';
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 
@@ -28,5 +29,22 @@ void main() {
     expect(processResult.stdout, '');
     expect(processResult.stderr, '');
     expect(0, processResult.exitCode);
+  });
+  test('protoc should generate readable FileDescriptorSet', () {
+    final protoDirectory = p.join(p.current, 'test/proto');
+    final tempDir = Directory.current.createTempSync('test/test-protoc');
+    final descriptorSetOutPath = p.join(tempDir.path, 'descriptor_set_out.bin');
+    final processResult = Process.runSync('protoc', [
+      '-I$protoDirectory',
+      '--descriptor_set_out=$descriptorSetOutPath',
+      p.join(protoDirectory, 'testpackage1/proto1.proto'),
+    ]);
+    final fileDescriptorSet = FileDescriptorSet.fromBuffer(
+        File(descriptorSetOutPath).readAsBytesSync());
+    tempDir.deleteSync(recursive: true);
+    expect(processResult.exitCode, 0);
+    expect(fileDescriptorSet.file.single.name, 'testpackage1/proto1.proto');
+    expect(fileDescriptorSet.file.single.messageType.single.name,
+        'PluginInterfaceTestArtifact');
   });
 }
