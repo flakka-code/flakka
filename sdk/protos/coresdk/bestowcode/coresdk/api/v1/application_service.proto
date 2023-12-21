@@ -1,0 +1,21 @@
+syntax = 'proto3';
+package bestowcode.coresdk.api.v1;
+
+service ApplicationService {
+  rpc Execute(ExecuteRequest) returns (ExecuteResponse);
+  //  rpc fetchState(FetchStateRequest) returns (stream FetchStateResponse);
+}
+
+message ExecuteRequest {
+  message Append {
+    message Event {}
+    message Forward {}
+    message Merge {}
+  }
+  message Publish {}
+  oneof body {
+    Append append = 1;
+    Publish publish = 2;
+  }
+}
+message ExecuteResponse {}
