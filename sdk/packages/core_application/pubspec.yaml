@@ -9,6 +9,7 @@ dependencies:
   bloc:
   core_analysis:
   freezed_annotation: ^2.2.0
+  protoc_plugin:
   signals:
 
 dev_dependencies:

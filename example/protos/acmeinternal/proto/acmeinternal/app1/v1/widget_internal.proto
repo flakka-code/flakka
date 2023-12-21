@@ -1,5 +1,5 @@
 syntax = 'proto3';
-package example.scope1.v1;
+package acmeinternal.app1.v1;
 
 import "google/protobuf/any.proto";
 import "dart_options/dart_options.proto";

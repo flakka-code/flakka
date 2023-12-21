@@ -1,4 +1,4 @@
 syntax = 'proto3';
-package acmeapis.app1.v1;
+package acmeinternal.app1.v1;
 
-import 'acmeapis/app1/v1/app1_api_schema.proto';
+import 'acmeinternal/app1/v1/app1_internal_schema.proto';

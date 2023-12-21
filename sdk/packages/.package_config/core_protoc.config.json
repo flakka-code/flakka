@@ -1,6 +1,6 @@
 {
-  "core_project_name": "aggregate",
-  "description": "An interface for interacting with typed data",
+  "core_project_name": "protoc",
+  "description": "Toolkit to develop protoc-gen plugins",
   "publishable": true,
   "dependencies": [
     {"package": "core_application"},

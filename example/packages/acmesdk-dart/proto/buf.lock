@@ -7,6 +7,11 @@ deps:
     commit: 33b9d25c0ade4555893cc8694cbdffe3
     digest: shake256:02dd3f096032c3cbd3f1f59bb117319d42b79ff15ebb3467d895a67be0d9814f99779a9fbf8b78700bb08d87b1bc6563838f472e4537ccaf719442a418606a02
   - remote: buf.build
+    owner: acmeinternal
+    repository: acmeinternal
+    commit: 71c98c69f221481ea0dac239d3f11192
+    digest: shake256:f4320d87bbbfadb0ad2fa23b6fd198c40dff377635d4fdd69f791fe751a21ae3d3b7b0e39abc34d2ca348fc1725a729bb886946be5389f7063b201c26569d74e
+  - remote: buf.build
     owner: bestowcode
     repository: coresdk
     commit: 14887e70be954465829cb5471132abeb

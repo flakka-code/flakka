@@ -1,7 +1,8 @@
 version: v1
 directories:
-  - example/packages/acmeapis-dart/proto
+  - example/packages/acmesdk-dart/proto
   - example/protos/acmeapis/proto
   - example/protos/acmeinternal/proto
-  - sdk/protos/dartoptions/proto
-  - sdk/protos/coresdk/proto
+  - sdk/protos/bestowcode/dartoptions
+  - sdk/protos/bestowcode/coresdk
+#  - sdk/packages/protocolbuffers_wellknown/proto
