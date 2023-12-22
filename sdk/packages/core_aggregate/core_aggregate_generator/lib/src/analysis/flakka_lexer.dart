@@ -1,4 +1,5 @@
 import 'package:antlr4/antlr4.dart';
+import 'package:core_aggregate_generator/src/analysis/FlakkaParser.dart';
 import 'package:core_aggregate_generator/src/analysis/tokens.dart';
 import 'package:protocolbuffers_wellknowntypes/google/protobuf/compiler/plugin.pb.dart';
 import 'package:protocolbuffers_wellknowntypes/google/protobuf/descriptor.pb.dart';
@@ -10,94 +11,113 @@ class FlakkaTokenStream extends BufferedTokenStream {
   FlakkaTokenStream(super.tokenSource);
 }
 
-class FlakkaTokenIterator {
-  Iterable<CommonToken> tokensFor(CodeGeneratorRequest request) sync* {
-    yield GeneratorRequestToken(request);
-    yield* tokensForFileDescriptorSet(request.sourceFileDescriptors);
+class FlakkaTokenSource extends ListTokenSource {
+  FlakkaTokenSource(super.tokens) {
+    i = 0;
+    eofToken = CommonToken(FlakkaParser.TOKEN_EOF);
   }
 
-  Iterable<CommonToken> tokensForFileDescriptorSet(FileDescriptorSet source) {
-    throw UnimplementedError();
+}
+
+class CodeGeneratorRequestTokenIterator {
+  Iterable<CommonToken> tokensFor(CodeGeneratorRequest request) sync* {
+    yield CodeGeneratorRequestToken(request);
+    yield AllFileDescriptorsToken();
+    yield* tokensForFileDescriptorSet(
+        FileDescriptorSet(file: request.sourceFileDescriptors));
+    yield SourceFileDescriptorsToken();
+    yield* tokensForFileDescriptorSet(
+        FileDescriptorSet(file: request.protoFile));
+    yield CommonToken(FlakkaParser.TOKEN_EOF);
+  }
+
+  Iterable<CommonToken> tokensForFileDescriptorSet(
+      FileDescriptorSet source) sync* {
+    yield FileDescriptorSetToken(source);
+    for (final fileDescriptor in source.file) {
+      yield* tokensForFileDescriptorProto(fileDescriptor);
+    }
   }
 
   Iterable<CommonToken> tokensForFileDescriptorProto(
-      FileDescriptorProto source) {
+      FileDescriptorProto source) sync* {
     throw UnimplementedError();
   }
 
-  Iterable<CommonToken> tokensForFileOptions(FileOptions source) {
+  Iterable<CommonToken> tokensForFileOptions(FileOptions source) sync* {
     throw UnimplementedError();
   }
 
-  Iterable<CommonToken> tokensForDescriptorProto(DescriptorProto source) {
+  Iterable<CommonToken> tokensForDescriptorProto(DescriptorProto source) sync* {
     throw UnimplementedError();
   }
 
-  Iterable<CommonToken> tokensForMessageOptions(MessageOptions source) {
+  Iterable<CommonToken> tokensForMessageOptions(MessageOptions source) sync* {
     throw UnimplementedError();
   }
 
   Iterable<CommonToken> tokensForFieldDescriptorProto(
-      FieldDescriptorProto source) {
+      FieldDescriptorProto source) sync* {
     throw UnimplementedError();
   }
 
-  Iterable<CommonToken> tokensForFieldOptions(FieldOptions source) {
+  Iterable<CommonToken> tokensForFieldOptions(FieldOptions source) sync* {
     throw UnimplementedError();
   }
 
   Iterable<CommonToken> tokensForOneofDescriptorProto(
-      OneofDescriptorProto source) {
+      OneofDescriptorProto source) sync* {
     throw UnimplementedError();
   }
 
-  Iterable<CommonToken> tokensForOneofOptions(OneofOptions source) {
+  Iterable<CommonToken> tokensForOneofOptions(OneofOptions source) sync* {
     throw UnimplementedError();
   }
 
   Iterable<CommonToken> tokensForEnumDescriptorProto(
-      EnumDescriptorProto source) {
+      EnumDescriptorProto source) sync* {
     throw UnimplementedError();
   }
 
-  Iterable<CommonToken> tokensForEnumOptions(EnumOptions source) {
+  Iterable<CommonToken> tokensForEnumOptions(EnumOptions source) sync* {
     throw UnimplementedError();
   }
 
   Iterable<CommonToken> tokensForEnumValueDescriptorProto(
-      EnumValueDescriptorProto source) {
+      EnumValueDescriptorProto source) sync* {
     throw UnimplementedError();
   }
 
-  Iterable<CommonToken> tokensForEnumValueOptions(EnumValueOptions source) {
+  Iterable<CommonToken> tokensForEnumValueOptions(
+      EnumValueOptions source) sync* {
     throw UnimplementedError();
   }
 
   Iterable<CommonToken> tokensForServiceDescriptorProto(
-      ServiceDescriptorProto source) {
+      ServiceDescriptorProto source) sync* {
     throw UnimplementedError();
   }
 
-  Iterable<CommonToken> tokensForServiceOptions(ServiceOptions source) {
+  Iterable<CommonToken> tokensForServiceOptions(ServiceOptions source) sync* {
     throw UnimplementedError();
   }
 
   Iterable<CommonToken> tokensForMethodDescriptorProto(
-      MethodDescriptorProto source) {
+      MethodDescriptorProto source) sync* {
     throw UnimplementedError();
   }
 
-  Iterable<CommonToken> tokensForMethodOptions(MethodOptions source) {
+  Iterable<CommonToken> tokensForMethodOptions(MethodOptions source) sync* {
     throw UnimplementedError();
   }
 
   Iterable<CommonToken> tokensForExtensionRangeOptions(
-      ExtensionRangeOptions source) {
+      ExtensionRangeOptions source) sync* {
     throw UnimplementedError();
   }
 
   Iterable<CommonToken> tokensForUninterpretedOption(
-      UninterpretedOption source) {
+      UninterpretedOption source) sync* {
     throw UnimplementedError();
   }
 }

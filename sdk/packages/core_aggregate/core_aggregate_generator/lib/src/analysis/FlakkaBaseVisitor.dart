@@ -1,5 +1,5 @@
 // Generated from Flakka.g4 by ANTLR 4.13.1
-// ignore_for_file: unused_import, unused_local_variable, prefer_single_quotes
+// ignore_for_file: unused_import, unused_local_variable, prefer_single_quotes, constant_identifier_names, prefer_function_declarations_over_variables, avoid_multiple_declarations_per_line, unnecessary_breaks, avoid_catching_errors, cascade_invocations, non_constant_identifier_names
 import 'package:antlr4/antlr4.dart';
 
 import 'FlakkaParser.dart';
@@ -12,6 +12,18 @@ import 'FlakkaVisitor.dart';
 /// [T] is the return type of the visit operation. Use `void` for
 /// operations with no return type.
 class FlakkaBaseVisitor<T> extends ParseTreeVisitor<T> implements FlakkaVisitor<T> {
+  /// The default implementation returns the result of calling
+  /// [visitChildren] on [ctx].
+  @override
+  T? visitCodeGeneratorRequest(CodeGeneratorRequestContext ctx) => visitChildren(ctx);
+  /// The default implementation returns the result of calling
+  /// [visitChildren] on [ctx].
+  @override
+  T? visitAllFileDescriptors(AllFileDescriptorsContext ctx) => visitChildren(ctx);
+  /// The default implementation returns the result of calling
+  /// [visitChildren] on [ctx].
+  @override
+  T? visitSourceFileDescriptors(SourceFileDescriptorsContext ctx) => visitChildren(ctx);
   /// The default implementation returns the result of calling
   /// [visitChildren] on [ctx].
   @override

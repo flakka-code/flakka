@@ -1,5 +1,6 @@
 import 'package:antlr4/antlr4.dart';
 import 'package:core_aggregate_generator/src/analysis/FlakkaParser.dart';
+import 'package:protocolbuffers_wellknowntypes/google/protobuf/compiler/plugin.pb.dart';
 import 'package:protocolbuffers_wellknowntypes/google/protobuf/descriptor.pb.dart';
 
 class FileDescriptorSetToken extends CommonToken {
@@ -106,4 +107,19 @@ class UninterpretedOptionToken extends CommonToken {
   UninterpretedOptionToken(this.data)
       : super(FlakkaParser.TOKEN_UNINTERPRETED_OPTION);
   final UninterpretedOption data;
+}
+
+class CodeGeneratorRequestToken extends CommonToken {
+  CodeGeneratorRequestToken(this.data)
+      : super(FlakkaParser.TOKEN_CODE_GENERATOR_REQUEST);
+  final CodeGeneratorRequest data;
+}
+
+class AllFileDescriptorsToken extends CommonToken {
+  AllFileDescriptorsToken() : super(FlakkaParser.TOKEN_ALL_FILE_DESCRIPTORS);
+}
+
+class SourceFileDescriptorsToken extends CommonToken {
+  SourceFileDescriptorsToken()
+      : super(FlakkaParser.TOKEN_SOURCE_FILE_DESCRIPTORS);
 }

@@ -1,5 +1,5 @@
 // Generated from Flakka.g4 by ANTLR 4.13.1
-// ignore_for_file: unused_import, unused_local_variable, prefer_single_quotes
+// ignore_for_file: unused_import, unused_local_variable, prefer_single_quotes, constant_identifier_names, prefer_function_declarations_over_variables, avoid_multiple_declarations_per_line, unnecessary_breaks, avoid_catching_errors, cascade_invocations, non_constant_identifier_names
 import 'package:antlr4/antlr4.dart';
 
 import 'FlakkaParser.dart';
@@ -10,6 +10,30 @@ import 'FlakkaListener.dart';
 /// which can be extended to create a listener which only needs to handle
 /// a subset of the available methods.
 class FlakkaBaseListener implements FlakkaListener {
+  /// The default implementation does nothing.
+  @override
+  void enterCodeGeneratorRequest(CodeGeneratorRequestContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitCodeGeneratorRequest(CodeGeneratorRequestContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterAllFileDescriptors(AllFileDescriptorsContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitAllFileDescriptors(AllFileDescriptorsContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterSourceFileDescriptors(SourceFileDescriptorsContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitSourceFileDescriptors(SourceFileDescriptorsContext ctx) {}
+
   /// The default implementation does nothing.
   @override
   void enterFileDescriptorSet(FileDescriptorSetContext ctx) {}

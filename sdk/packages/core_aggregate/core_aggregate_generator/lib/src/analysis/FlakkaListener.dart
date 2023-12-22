@@ -1,5 +1,5 @@
 // Generated from Flakka.g4 by ANTLR 4.13.1
-// ignore_for_file: unused_import, unused_local_variable, prefer_single_quotes
+// ignore_for_file: unused_import, unused_local_variable, prefer_single_quotes, constant_identifier_names, prefer_function_declarations_over_variables, avoid_multiple_declarations_per_line, unnecessary_breaks, avoid_catching_errors, cascade_invocations, non_constant_identifier_names
 import 'package:antlr4/antlr4.dart';
 
 import 'FlakkaParser.dart';
@@ -7,6 +7,27 @@ import 'FlakkaParser.dart';
 /// This abstract class defines a complete listener for a parse tree produced by
 /// [FlakkaParser].
 abstract class FlakkaListener extends ParseTreeListener {
+  /// Enter a parse tree produced by [FlakkaParser.codeGeneratorRequest].
+  /// [ctx] the parse tree
+  void enterCodeGeneratorRequest(CodeGeneratorRequestContext ctx);
+  /// Exit a parse tree produced by [FlakkaParser.codeGeneratorRequest].
+  /// [ctx] the parse tree
+  void exitCodeGeneratorRequest(CodeGeneratorRequestContext ctx);
+
+  /// Enter a parse tree produced by [FlakkaParser.allFileDescriptors].
+  /// [ctx] the parse tree
+  void enterAllFileDescriptors(AllFileDescriptorsContext ctx);
+  /// Exit a parse tree produced by [FlakkaParser.allFileDescriptors].
+  /// [ctx] the parse tree
+  void exitAllFileDescriptors(AllFileDescriptorsContext ctx);
+
+  /// Enter a parse tree produced by [FlakkaParser.sourceFileDescriptors].
+  /// [ctx] the parse tree
+  void enterSourceFileDescriptors(SourceFileDescriptorsContext ctx);
+  /// Exit a parse tree produced by [FlakkaParser.sourceFileDescriptors].
+  /// [ctx] the parse tree
+  void exitSourceFileDescriptors(SourceFileDescriptorsContext ctx);
+
   /// Enter a parse tree produced by [FlakkaParser.fileDescriptorSet].
   /// [ctx] the parse tree
   void enterFileDescriptorSet(FileDescriptorSetContext ctx);

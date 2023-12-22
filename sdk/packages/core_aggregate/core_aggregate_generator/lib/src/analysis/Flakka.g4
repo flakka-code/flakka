@@ -1,12 +1,13 @@
 grammar Flakka;
 options {tokenVocab = Flakka; }
-codeGeneratorRequest: CODE_GENERATOR_REQUEST allFileDescriptors sourceFileDescriptors;
-
+codeGeneratorRequest: CODE_GENERATOR_REQUEST allFileDescriptors sourceFileDescriptors EOF;
+//codeGeneratorRequest: CODE_GENERATOR_REQUEST  EOF;
 
 allFileDescriptors: ALL_FILE_DESCRIPTORS fileDescriptorSet;
+sourceFileDescriptors: SOURCE_FILE_DESCRIPTORS fileDescriptorSet;
+
 fileDescriptorSet: FILE_DESCRIPTOR_SET (fileDescriptorProto)*;
 
-sourceFileDescriptors: SOURCE_FILE_DESCRIPTORS fileDescriptorSet;
 
 fileDescriptorProto: FILE_DESCRIPTOR_PROTO (descriptorProto)*;
 fileOptions: FILE_OPTIONS;
