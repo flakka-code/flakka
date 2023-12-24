@@ -3,11 +3,11 @@ syntax = "proto3";
 
 package acmeapis.example.v1;
 
-import 'flakkadomain/domain_root.proto';
+import 'flakkadomain/v1/domain_root.proto';
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "kalix/annotations.proto";
 
-option (flakkadomain.domain_root) = {
+option (flakkadomain.v1.domain_root) = {
   entities: ["acmeapis.example.counter.v1.counter"]
 };

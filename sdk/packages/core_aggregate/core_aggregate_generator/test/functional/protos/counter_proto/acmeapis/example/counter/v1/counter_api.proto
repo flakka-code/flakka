@@ -3,13 +3,9 @@ syntax = "proto3";
 
 package acmeapis.example.counter.v1;
 
-import 'flakkaapi/entity_api.proto';
+import 'flakkaapi/v1/entity_api.proto';
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
-
-message CounterEntityApiTypeDef {
-  option (flakkaapi.entity_api) = {instance_service: "acmeapis.example.counter.v1.CounterService"};
-}
 
 message IncreaseValue {
   int32 value = 2;
@@ -34,4 +30,8 @@ service CounterService {
   rpc Decrease(DecreaseValue) returns (google.protobuf.Empty);
   rpc Reset(ResetValue) returns (google.protobuf.Empty);
   rpc GetCurrentCounter(GetCounter) returns (CurrentCounter);
+}
+
+message CounterEntityApi {
+  option (flakkaapi.v1.entity_api) = {service: "acmeapis.example.counter.v1.CounterService"};
 }

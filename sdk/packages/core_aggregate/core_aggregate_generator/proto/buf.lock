@@ -2,11 +2,6 @@
 version: v1
 deps:
   - remote: buf.build
-    owner: bestowcode
-    repository: flakka
-    commit: 3e6692d58685473abb5e849d2c57018d
-    digest: shake256:2e24a39f568a8ccf3c56ed48f522e69b6de4cb8d84f906be32cb3ad9ebc010074350b5f49b8e4d1aa5d982b4a167e255879bde1fa80ac92caf6a236fcaa9c6a1
-  - remote: buf.build
     owner: googleapis
     repository: googleapis
     commit: a86849a25cc04f4dbe9b15ddddfbc488

@@ -9,4 +9,4 @@ lint:
 
 deps:
   - buf.build/googleapis/googleapis
-  - buf.build/bestowcode/kalix
+  - buf.build/bestowcode/flakka

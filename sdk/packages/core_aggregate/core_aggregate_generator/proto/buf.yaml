@@ -1,12 +1,15 @@
 version: v1
+name: buf.build/bestowcode/flakka
 breaking:
   use:
     - FILE
 lint:
   use:
     - DEFAULT
-
+  ignore_only:
+    PACKAGE_VERSION_SUFFIX:
+      - flakka/entity_root_decl.proto
+      - flakka/entity_root_decl.proto
 
 deps:
   - buf.build/googleapis/googleapis
-  - buf.build/bestowcode/flakka

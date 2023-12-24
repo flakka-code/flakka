@@ -1,5 +1,0 @@
-syntax = 'proto2';
-import "flakkaapi/entity_api.proto";
-import "flakkaapi/api_root.proto";
-import "flakkadomain/entity_domain.proto";
-import "flakkadomain/domain_root.proto";

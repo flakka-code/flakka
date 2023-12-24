@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package flakkaapi.v1;
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.MessageOptions {
+  optional ApiRootTypeDefProperties api_root = 43457498;
+}
+
+message ApiRootTypeDefProperties {
+//  repeated string entities = 1;
+}

@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:core_aggregate_generator/src/generator/core_aggregate_generator.dart';
+import 'package:core_aggregate_generator/src/generator.dart';
 import 'package:path/path.dart' as p;
 import 'package:test/test.dart';
 
@@ -14,7 +14,7 @@ void main() {
   for (final directory in testProtoDirectories) {
     final name = p.basename(directory.path);
     test('generator golden: ${name}', () async {
-      CoreAggregateGenerator().
+      // Generator().
     });
   }
   // .listSync(recursive: true)

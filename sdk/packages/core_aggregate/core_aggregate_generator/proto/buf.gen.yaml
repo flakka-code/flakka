@@ -4,6 +4,6 @@ managed:
   enabled: true
 plugins:
   - plugin: buf.build/protocolbuffers/dart:v21.1.2
-    out: ../lib/generated
+    out: ../lib/flakka
     opt:
       - grpc

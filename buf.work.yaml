@@ -1,11 +1,11 @@
 version: v1
 directories:
-  - example/counter/proto
+  #  - example/counter/proto
   - example/packages/acmesdk-dart/proto
   - example/protos/api/acmeapis
   - example/protos/internal/acmeinternal
-  - sdk/protos/flakka
+  #  - sdk/protos/flakka
   - sdk/protos/bestowcode/dartoptions
   - sdk/protos/bestowcode/coresdk
-  - sdk/protos/kalix
   - sdk/packages/core_aggregate/core_aggregate_generator/proto
+  - sdk/packages/core_aggregate/core_aggregate_generator/test/functional/protos/counter_proto

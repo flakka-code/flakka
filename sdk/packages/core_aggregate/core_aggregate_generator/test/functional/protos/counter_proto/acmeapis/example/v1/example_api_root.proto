@@ -3,13 +3,14 @@ syntax = "proto3";
 
 package acmeapis.example.v1;
 
-import 'flakkaapi/api_root.proto';
+import 'flakkaapi/v1/api_root.proto';
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
 import "kalix/annotations.proto";
 import "acmeapis/example/counter/v1/counter_api.proto";
 message ExampleApiRootTypeDef {
-  option (flakkaapi.api_root) = {};
-  acmeapis.example.counter.v1.DecreaseValue
+  option (flakkaapi.v1.api_root) = {};
+  acmeapis.example.counter.v1.CounterEntityApi counter = 1;
+
 
 }
