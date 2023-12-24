@@ -9,6 +9,7 @@ environment:
 
 dependencies:
   analyzer:
+  core_protoc:
   build:
   built_value:
   built_collection:

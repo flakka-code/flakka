@@ -35,13 +35,6 @@ abstract class FlakkaListener extends ParseTreeListener {
   /// [ctx] the parse tree
   void exitFileDescriptor(FileDescriptorContext ctx);
 
-  /// Enter a parse tree produced by [FlakkaParser.topLevelEnumDescriptor].
-  /// [ctx] the parse tree
-  void enterTopLevelEnumDescriptor(TopLevelEnumDescriptorContext ctx);
-  /// Exit a parse tree produced by [FlakkaParser.topLevelEnumDescriptor].
-  /// [ctx] the parse tree
-  void exitTopLevelEnumDescriptor(TopLevelEnumDescriptorContext ctx);
-
   /// Enter a parse tree produced by [FlakkaParser.topLevelMessageDescriptor].
   /// [ctx] the parse tree
   void enterTopLevelMessageDescriptor(TopLevelMessageDescriptorContext ctx);
@@ -69,6 +62,13 @@ abstract class FlakkaListener extends ParseTreeListener {
   /// Exit a parse tree produced by [FlakkaParser.messageExtension].
   /// [ctx] the parse tree
   void exitMessageExtension(MessageExtensionContext ctx);
+
+  /// Enter a parse tree produced by [FlakkaParser.topLevelEnumDescriptor].
+  /// [ctx] the parse tree
+  void enterTopLevelEnumDescriptor(TopLevelEnumDescriptorContext ctx);
+  /// Exit a parse tree produced by [FlakkaParser.topLevelEnumDescriptor].
+  /// [ctx] the parse tree
+  void exitTopLevelEnumDescriptor(TopLevelEnumDescriptorContext ctx);
 
   /// Enter a parse tree produced by [FlakkaParser.messageEnumDescriptor].
   /// [ctx] the parse tree

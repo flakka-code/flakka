@@ -8,21 +8,21 @@ import 'package:protocolbuffers_wellknowntypes/google/protobuf/compiler/plugin.p
 
 class CodeGeneratorRequestProcessor {
   CodeGeneratorRequestProcessor(
-    CodeGenerator generator, [
-    ExtensionRegistry extensionRegistry = ExtensionRegistry.EMPTY,
-  ])  : _extensionRegistry = extensionRegistry,
+      CodeGeneratorBase generator, [
+        ExtensionRegistry extensionRegistry = ExtensionRegistry.EMPTY,
+      ])  : _extensionRegistry = extensionRegistry,
         _generator = generator;
 
   Future<void> run(
-    Stream<List<int>> requestStream,
-    StreamSink<List<int>> responseSink,
-  ) async {
+      Stream<List<int>> requestStream,
+      StreamSink<List<int>> responseSink,
+      ) async {
     final requestBytes = (await requestStream
-            .toList()
-            .then((value) => value.expand((element) => element)))
+        .toList()
+        .then((value) => value.expand((element) => element)))
         .toList();
     final request =
-        CodeGeneratorRequest.fromBuffer(requestBytes, _extensionRegistry);
+    CodeGeneratorRequest.fromBuffer(requestBytes, _extensionRegistry);
 
     final fork = Zone.current.fork(
       specification: ZoneSpecification(
@@ -42,18 +42,22 @@ class CodeGeneratorRequestProcessor {
       }
       for (var i = 0; i < request.fileToGenerate.length; i = i + 1) {
         try {
-          response.file.add(
-            CodeGeneratorResponse_File(
-              name: p.setExtension(
-                request.fileToGenerate[i],
-                _generator.outputExtension,
+          _generator
+              .generate(
+            request.fileToGenerate[i],
+            request.protoFile[i],
+          )
+              .forEach((resultExtension, resultContents) {
+            response.file.add(
+              CodeGeneratorResponse_File(
+                name: p.setExtension(
+                  request.fileToGenerate[i],
+                  resultExtension,
+                ),
+                content: resultContents,
               ),
-              content: _generator.generate(
-                request.fileToGenerate[i],
-                request.protoFile[i],
-              ),
-            ),
-          );
+            );
+          });
         } catch (e, stacktrace) {
           stderr
             ..writeln(
@@ -68,6 +72,6 @@ class CodeGeneratorRequestProcessor {
     responseSink.add(responseBytes);
   }
 
-  final CodeGenerator _generator;
+  final CodeGeneratorBase _generator;
   final ExtensionRegistry _extensionRegistry;
 }

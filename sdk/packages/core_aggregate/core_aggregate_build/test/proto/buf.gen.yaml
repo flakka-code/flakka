@@ -9,7 +9,7 @@ plugins:
 #      - grpc
   - plugin: flakkadart
     out: ../generated2
-    path: ../../bin/protoc-gen-flakkadart
+    path: ../../bin/protoc-gen-core-aggregate
     strategy: all
     opt:
       - grpc

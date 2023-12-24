@@ -1,8 +1,10 @@
 grammar Flakka;
 options {tokenVocab = Flakka; }
 generatorRequest
-  : GENERATOR_REQUEST FILES_TO_GENERATE GENERATOR_REQUEST_PARAMETER (protoFile)* (sourceFile)*
+  : generatorRequestHead {return true} (protoFile)* (sourceFile)*
   ;
+
+generatorRequestHead : GENERATOR_REQUEST FILES_TO_GENERATE GENERATOR_REQUEST_PARAMETER ;
 
 
 protoFile : PROTO_DEPENDENCY_FILE_DESCRIPTOR fileDescriptor;

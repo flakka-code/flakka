@@ -44,14 +44,6 @@ class FlakkaBaseListener implements FlakkaListener {
 
   /// The default implementation does nothing.
   @override
-  void enterTopLevelEnumDescriptor(TopLevelEnumDescriptorContext ctx) {}
-
-  /// The default implementation does nothing.
-  @override
-  void exitTopLevelEnumDescriptor(TopLevelEnumDescriptorContext ctx) {}
-
-  /// The default implementation does nothing.
-  @override
   void enterTopLevelMessageDescriptor(TopLevelMessageDescriptorContext ctx) {}
 
   /// The default implementation does nothing.
@@ -81,6 +73,14 @@ class FlakkaBaseListener implements FlakkaListener {
   /// The default implementation does nothing.
   @override
   void exitMessageExtension(MessageExtensionContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void enterTopLevelEnumDescriptor(TopLevelEnumDescriptorContext ctx) {}
+
+  /// The default implementation does nothing.
+  @override
+  void exitTopLevelEnumDescriptor(TopLevelEnumDescriptorContext ctx) {}
 
   /// The default implementation does nothing.
   @override

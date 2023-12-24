@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package acmeinternal.example.counter.domain.v1;
+
+import "flakkadomain/entity_domain.proto";
+
+option (flakkadomain.event_sourced_entity) = {
+  entity_api: "acmeapis.example.counter.v1.counter",
+  state: "acmedomain.example.counter.v1.CounterState",
+  events: [
+    "acmedomain.example.counter.v1.ValueIncreased",
+    "acmedomain.example.counter.v1.ValueDecreased",
+    "acmedomain.example.counter.v1.ValueReset"
+  ]
+};
+message CounterState {
+  int32 value = 1;
+}
+
+message ValueIncreased {
+  int32 value = 1;
+}
+
+message ValueDecreased {
+  int32 value = 1;
+}
+
+message ValueReset {}

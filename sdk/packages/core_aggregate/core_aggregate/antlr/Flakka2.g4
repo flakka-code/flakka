@@ -1,5 +1,5 @@
-grammar Flakka;
-options {tokenVocab = Flakka; }
+grammar Flakka2;
+options {tokenVocab = Flakka2; }
 generatorRequest
   : GENERATOR_REQUEST FILES_TO_GENERATE GENERATOR_REQUEST_PARAMETER (protoFile)* (sourceFile)*
   ;

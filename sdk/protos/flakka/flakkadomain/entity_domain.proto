@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package flakkadomain;
+
+import "google/protobuf/descriptor.proto";
+
+message EventSourcedEntityDescriptor {
+  // A package and name reference to the entity declaration
+  string entity_api = 1;
+  // Reference to the entity's state message.
+  string state = 3;
+  // Zero or more event messages references
+  repeated string events = 4;
+}
+
+extend google.protobuf.FileOptions {
+  repeated EventSourcedEntityDescriptor event_sourced_entity = 43353498;
+}

@@ -1,6 +1,6 @@
 {
-  "core_project_name": "aggregate",
-  "description": "An interface for interacting with typed data",
+  "core_project_name": "aggregate_generator",
+  "description": "Proto generator plugin for core_aggregate interfaces",
   "publishable": true,
   "dependencies": [
     {"package": "core_application"},
