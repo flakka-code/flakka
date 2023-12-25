@@ -6,9 +6,9 @@ import "google/protobuf/descriptor.proto";
 
 extend google.protobuf.MessageOptions {
   // Use this inside an entity api type def
-  repeated EntityApiTypeDefProperties entity_api = 43453498;
+  repeated EntityApiTypedef entity_api = 43453498;
 }
-message EntityApiTypeDefProperties {
+message EntityApiTypedef {
   // Optional - defaults to the snake-cased name as derived from the service
   optional string name = 1;
   // Required - Fully-qualified (instance) service name

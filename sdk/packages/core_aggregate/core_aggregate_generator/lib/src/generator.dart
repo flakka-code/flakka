@@ -24,12 +24,13 @@ class Generator extends CodeGeneratorBase {
   @override
   Map<String, String> generate(
     List<FileDescriptorProto> sourceFiles,
-    List<FileDescriptorProto> generateFiles,
+    List<FileDescriptorProto> targetFiles,
   ) {
-    final symbolTable = Scanner().scan(sourceFiles);
-    final result = Parser(sourceFiles, symbolTable).result();
+    final lookupTable = Scanner().scan(sourceFiles);
+    final result = Parser(sourceFiles, lookupTable).result();
+    assert(result!.entityApiElements.isNotEmpty, 'empty');
     if (result != null) {
-      return ResultBuilder().build(result, generateFiles);
+      return ResultBuilder().build(result, targetFiles);
     } else {
       return {};
     }

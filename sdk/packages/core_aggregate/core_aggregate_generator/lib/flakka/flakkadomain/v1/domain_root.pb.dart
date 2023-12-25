@@ -13,8 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class DomainRootDescriptor extends $pb.GeneratedMessage {
-  factory DomainRootDescriptor({
+class DomainRootTypedef extends $pb.GeneratedMessage {
+  factory DomainRootTypedef({
     $core.Iterable<$core.String>? entities,
   }) {
     final $result = create();
@@ -23,11 +23,11 @@ class DomainRootDescriptor extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  DomainRootDescriptor._() : super();
-  factory DomainRootDescriptor.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DomainRootDescriptor.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  DomainRootTypedef._() : super();
+  factory DomainRootTypedef.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DomainRootTypedef.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DomainRootDescriptor', package: const $pb.PackageName(_omitMessageNames ? '' : 'flakkadomain.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DomainRootTypedef', package: const $pb.PackageName(_omitMessageNames ? '' : 'flakkadomain.v1'), createEmptyInstance: create)
     ..pPS(2, _omitFieldNames ? '' : 'entities')
     ..hasRequiredFields = false
   ;
@@ -36,29 +36,29 @@ class DomainRootDescriptor extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  DomainRootDescriptor clone() => DomainRootDescriptor()..mergeFromMessage(this);
+  DomainRootTypedef clone() => DomainRootTypedef()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DomainRootDescriptor copyWith(void Function(DomainRootDescriptor) updates) => super.copyWith((message) => updates(message as DomainRootDescriptor)) as DomainRootDescriptor;
+  DomainRootTypedef copyWith(void Function(DomainRootTypedef) updates) => super.copyWith((message) => updates(message as DomainRootTypedef)) as DomainRootTypedef;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static DomainRootDescriptor create() => DomainRootDescriptor._();
-  DomainRootDescriptor createEmptyInstance() => create();
-  static $pb.PbList<DomainRootDescriptor> createRepeated() => $pb.PbList<DomainRootDescriptor>();
+  static DomainRootTypedef create() => DomainRootTypedef._();
+  DomainRootTypedef createEmptyInstance() => create();
+  static $pb.PbList<DomainRootTypedef> createRepeated() => $pb.PbList<DomainRootTypedef>();
   @$core.pragma('dart2js:noInline')
-  static DomainRootDescriptor getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DomainRootDescriptor>(create);
-  static DomainRootDescriptor? _defaultInstance;
+  static DomainRootTypedef getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DomainRootTypedef>(create);
+  static DomainRootTypedef? _defaultInstance;
 
   @$pb.TagNumber(2)
   $core.List<$core.String> get entities => $_getList(0);
 }
 
 class Domain_root {
-  static final domainRoot = $pb.Extension<DomainRootDescriptor>(_omitMessageNames ? '' : 'google.protobuf.FileOptions', _omitFieldNames ? '' : 'domainRoot', 43653498, $pb.PbFieldType.OM, defaultOrMaker: DomainRootDescriptor.getDefault, subBuilder: DomainRootDescriptor.create);
+  static final domainRoot = $pb.Extension<DomainRootTypedef>(_omitMessageNames ? '' : 'google.protobuf.FileOptions', _omitFieldNames ? '' : 'domainRoot', 43653498, $pb.PbFieldType.OM, defaultOrMaker: DomainRootTypedef.getDefault, subBuilder: DomainRootTypedef.create);
   static void registerAllExtensions($pb.ExtensionRegistry registry) {
     registry.add(domainRoot);
   }

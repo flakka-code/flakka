@@ -5,8 +5,8 @@ package flakkadomain.v1;
 import "google/protobuf/descriptor.proto";
 
 extend google.protobuf.FileOptions {
-  optional DomainRootDescriptor domain_root = 43653498;
+  optional DomainRootTypedef domain_root = 43653498;
 }
-message DomainRootDescriptor {
+message DomainRootTypedef {
   repeated string entities = 2;
 }

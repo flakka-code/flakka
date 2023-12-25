@@ -15,8 +15,6 @@ class CoreAggregateBuilder extends Builder {
         .libraryFor(AssetId('protobuf', 'lib/protobuf.dart'));
     final generatedMessageClassElement =
         protobufLibrary.getClass('GeneratedService')!;
-    print(generatedMessageClassElement.source.uri);
-    print(generatedMessageClassElement.source.fullName);
     final libraryElement = await buildStep.inputLibrary;
     print(libraryElement.source);
     final emitter = DartEmitter.scoped();

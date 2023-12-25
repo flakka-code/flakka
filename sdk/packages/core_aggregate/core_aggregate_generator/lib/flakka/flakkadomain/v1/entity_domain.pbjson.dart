@@ -13,9 +13,9 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-@$core.Deprecated('Use eventSourcedEntityDomainTypeDefDescriptor instead')
-const EventSourcedEntityDomainTypeDef$json = {
-  '1': 'EventSourcedEntityDomainTypeDef',
+@$core.Deprecated('Use eventSourcedEntityDomainTypedefDescriptor instead')
+const EventSourcedEntityDomainTypedef$json = {
+  '1': 'EventSourcedEntityDomainTypedef',
   '2': [
     {'1': 'entity_api_field_name_override', '3': 1, '4': 1, '5': 9, '10': 'entityApiFieldNameOverride'},
     {'1': 'state_field_name_override', '3': 2, '4': 1, '5': 9, '10': 'stateFieldNameOverride'},
@@ -23,9 +23,9 @@ const EventSourcedEntityDomainTypeDef$json = {
   ],
 };
 
-/// Descriptor for `EventSourcedEntityDomainTypeDef`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List eventSourcedEntityDomainTypeDefDescriptor = $convert.base64Decode(
-    'Ch9FdmVudFNvdXJjZWRFbnRpdHlEb21haW5UeXBlRGVmEkIKHmVudGl0eV9hcGlfZmllbGRfbm'
+/// Descriptor for `EventSourcedEntityDomainTypedef`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List eventSourcedEntityDomainTypedefDescriptor = $convert.base64Decode(
+    'Ch9FdmVudFNvdXJjZWRFbnRpdHlEb21haW5UeXBlZGVmEkIKHmVudGl0eV9hcGlfZmllbGRfbm'
     'FtZV9vdmVycmlkZRgBIAEoCVIaZW50aXR5QXBpRmllbGROYW1lT3ZlcnJpZGUSOQoZc3RhdGVf'
     'ZmllbGRfbmFtZV9vdmVycmlkZRgCIAEoCVIWc3RhdGVGaWVsZE5hbWVPdmVycmlkZRI7Chpldm'
     'VudHNfZmllbGRfbmFtZV9vdmVycmlkZRgDIAEoCVIXZXZlbnRzRmllbGROYW1lT3ZlcnJpZGU=');

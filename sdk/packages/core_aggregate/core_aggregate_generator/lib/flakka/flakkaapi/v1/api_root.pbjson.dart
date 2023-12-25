@@ -13,12 +13,12 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-@$core.Deprecated('Use apiRootTypeDefPropertiesDescriptor instead')
-const ApiRootTypeDefProperties$json = {
-  '1': 'ApiRootTypeDefProperties',
+@$core.Deprecated('Use apiRootTypedefDescriptor instead')
+const ApiRootTypedef$json = {
+  '1': 'ApiRootTypedef',
 };
 
-/// Descriptor for `ApiRootTypeDefProperties`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List apiRootTypeDefPropertiesDescriptor = $convert.base64Decode(
-    'ChhBcGlSb290VHlwZURlZlByb3BlcnRpZXM=');
+/// Descriptor for `ApiRootTypedef`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List apiRootTypedefDescriptor = $convert.base64Decode(
+    'Cg5BcGlSb290VHlwZWRlZg==');
 

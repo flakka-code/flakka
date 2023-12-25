@@ -13,8 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class EntityApiTypeDefProperties extends $pb.GeneratedMessage {
-  factory EntityApiTypeDefProperties({
+class EntityApiTypedef extends $pb.GeneratedMessage {
+  factory EntityApiTypedef({
     $core.String? name,
     $core.String? service,
     $core.String? collectionService,
@@ -31,11 +31,11 @@ class EntityApiTypeDefProperties extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  EntityApiTypeDefProperties._() : super();
-  factory EntityApiTypeDefProperties.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory EntityApiTypeDefProperties.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  EntityApiTypedef._() : super();
+  factory EntityApiTypedef.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EntityApiTypedef.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EntityApiTypeDefProperties', package: const $pb.PackageName(_omitMessageNames ? '' : 'flakkaapi.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EntityApiTypedef', package: const $pb.PackageName(_omitMessageNames ? '' : 'flakkaapi.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aQS(5, _omitFieldNames ? '' : 'service')
     ..aOS(6, _omitFieldNames ? '' : 'collectionService')
@@ -45,22 +45,22 @@ class EntityApiTypeDefProperties extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  EntityApiTypeDefProperties clone() => EntityApiTypeDefProperties()..mergeFromMessage(this);
+  EntityApiTypedef clone() => EntityApiTypedef()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  EntityApiTypeDefProperties copyWith(void Function(EntityApiTypeDefProperties) updates) => super.copyWith((message) => updates(message as EntityApiTypeDefProperties)) as EntityApiTypeDefProperties;
+  EntityApiTypedef copyWith(void Function(EntityApiTypedef) updates) => super.copyWith((message) => updates(message as EntityApiTypedef)) as EntityApiTypedef;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static EntityApiTypeDefProperties create() => EntityApiTypeDefProperties._();
-  EntityApiTypeDefProperties createEmptyInstance() => create();
-  static $pb.PbList<EntityApiTypeDefProperties> createRepeated() => $pb.PbList<EntityApiTypeDefProperties>();
+  static EntityApiTypedef create() => EntityApiTypedef._();
+  EntityApiTypedef createEmptyInstance() => create();
+  static $pb.PbList<EntityApiTypedef> createRepeated() => $pb.PbList<EntityApiTypedef>();
   @$core.pragma('dart2js:noInline')
-  static EntityApiTypeDefProperties getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EntityApiTypeDefProperties>(create);
-  static EntityApiTypeDefProperties? _defaultInstance;
+  static EntityApiTypedef getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EntityApiTypedef>(create);
+  static EntityApiTypedef? _defaultInstance;
 
   /// Optional - defaults to the snake-cased name as derived from the service
   @$pb.TagNumber(1)
@@ -94,7 +94,7 @@ class EntityApiTypeDefProperties extends $pb.GeneratedMessage {
 }
 
 class Entity_api {
-  static final entityApi = $pb.Extension<EntityApiTypeDefProperties>.repeated(_omitMessageNames ? '' : 'google.protobuf.MessageOptions', _omitFieldNames ? '' : 'entityApi', 43453498, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: EntityApiTypeDefProperties.create);
+  static final entityApi = $pb.Extension<EntityApiTypedef>.repeated(_omitMessageNames ? '' : 'google.protobuf.MessageOptions', _omitFieldNames ? '' : 'entityApi', 43453498, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: EntityApiTypedef.create);
   static void registerAllExtensions($pb.ExtensionRegistry registry) {
     registry.add(entityApi);
   }

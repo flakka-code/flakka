@@ -13,13 +13,13 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class ApiRootTypeDefProperties extends $pb.GeneratedMessage {
-  factory ApiRootTypeDefProperties() => create();
-  ApiRootTypeDefProperties._() : super();
-  factory ApiRootTypeDefProperties.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ApiRootTypeDefProperties.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+class ApiRootTypedef extends $pb.GeneratedMessage {
+  factory ApiRootTypedef() => create();
+  ApiRootTypedef._() : super();
+  factory ApiRootTypedef.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ApiRootTypedef.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ApiRootTypeDefProperties', package: const $pb.PackageName(_omitMessageNames ? '' : 'flakkaapi.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ApiRootTypedef', package: const $pb.PackageName(_omitMessageNames ? '' : 'flakkaapi.v1'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
@@ -27,26 +27,26 @@ class ApiRootTypeDefProperties extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ApiRootTypeDefProperties clone() => ApiRootTypeDefProperties()..mergeFromMessage(this);
+  ApiRootTypedef clone() => ApiRootTypedef()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ApiRootTypeDefProperties copyWith(void Function(ApiRootTypeDefProperties) updates) => super.copyWith((message) => updates(message as ApiRootTypeDefProperties)) as ApiRootTypeDefProperties;
+  ApiRootTypedef copyWith(void Function(ApiRootTypedef) updates) => super.copyWith((message) => updates(message as ApiRootTypedef)) as ApiRootTypedef;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static ApiRootTypeDefProperties create() => ApiRootTypeDefProperties._();
-  ApiRootTypeDefProperties createEmptyInstance() => create();
-  static $pb.PbList<ApiRootTypeDefProperties> createRepeated() => $pb.PbList<ApiRootTypeDefProperties>();
+  static ApiRootTypedef create() => ApiRootTypedef._();
+  ApiRootTypedef createEmptyInstance() => create();
+  static $pb.PbList<ApiRootTypedef> createRepeated() => $pb.PbList<ApiRootTypedef>();
   @$core.pragma('dart2js:noInline')
-  static ApiRootTypeDefProperties getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ApiRootTypeDefProperties>(create);
-  static ApiRootTypeDefProperties? _defaultInstance;
+  static ApiRootTypedef getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ApiRootTypedef>(create);
+  static ApiRootTypedef? _defaultInstance;
 }
 
 class Api_root {
-  static final apiRoot = $pb.Extension<ApiRootTypeDefProperties>(_omitMessageNames ? '' : 'google.protobuf.MessageOptions', _omitFieldNames ? '' : 'apiRoot', 43457498, $pb.PbFieldType.OM, defaultOrMaker: ApiRootTypeDefProperties.getDefault, subBuilder: ApiRootTypeDefProperties.create);
+  static final apiRoot = $pb.Extension<ApiRootTypedef>(_omitMessageNames ? '' : 'google.protobuf.MessageOptions', _omitFieldNames ? '' : 'apiRoot', 43457498, $pb.PbFieldType.OM, defaultOrMaker: ApiRootTypedef.getDefault, subBuilder: ApiRootTypedef.create);
   static void registerAllExtensions($pb.ExtensionRegistry registry) {
     registry.add(apiRoot);
   }

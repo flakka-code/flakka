@@ -8,21 +8,21 @@ import 'package:protocolbuffers_wellknowntypes/google/protobuf/compiler/plugin.p
 
 class CodeGeneratorRequestProcessor {
   CodeGeneratorRequestProcessor(
-      CodeGeneratorBase generator, [
-        ExtensionRegistry extensionRegistry = ExtensionRegistry.EMPTY,
-      ])  : _extensionRegistry = extensionRegistry,
+    CodeGeneratorBase generator, [
+    ExtensionRegistry extensionRegistry = ExtensionRegistry.EMPTY,
+  ])  : _extensionRegistry = extensionRegistry,
         _generator = generator;
 
   Future<void> run(
-      Stream<List<int>> requestStream,
-      StreamSink<List<int>> responseSink,
-      ) async {
+    Stream<List<int>> requestStream,
+    StreamSink<List<int>> responseSink,
+  ) async {
     final requestBytes = (await requestStream
-        .toList()
-        .then((value) => value.expand((element) => element)))
+            .toList()
+            .then((value) => value.expand((element) => element)))
         .toList();
     final request =
-    CodeGeneratorRequest.fromBuffer(requestBytes, _extensionRegistry);
+        CodeGeneratorRequest.fromBuffer(requestBytes, _extensionRegistry);
 
     final fork = Zone.current.fork(
       specification: ZoneSpecification(
@@ -32,40 +32,22 @@ class CodeGeneratorRequestProcessor {
     final response = CodeGeneratorResponse();
     fork.run(() {
       try {
-        _generator.prepare(request.sourceFileDescriptors, request.protoFile);
+        _generator
+            .generate(request.sourceFileDescriptors, request.protoFile)
+            .forEach((filename, content) {
+          response.file.add(
+            CodeGeneratorResponse_File(
+              name: filename,
+              content: content,
+            ),
+          );
+        });
       } catch (e, stacktrace) {
         stderr
-          ..writeln('`prepare` failed:')
+          ..writeln('`generate` failed:')
           ..writeAll([e, stacktrace]);
         response.error = '$e';
         return response;
-      }
-      for (var i = 0; i < request.fileToGenerate.length; i = i + 1) {
-        try {
-          _generator
-              .generate(
-            request.fileToGenerate[i],
-            request.protoFile[i],
-          )
-              .forEach((resultExtension, resultContents) {
-            response.file.add(
-              CodeGeneratorResponse_File(
-                name: p.setExtension(
-                  request.fileToGenerate[i],
-                  resultExtension,
-                ),
-                content: resultContents,
-              ),
-            );
-          });
-        } catch (e, stacktrace) {
-          stderr
-            ..writeln(
-              '`generate` failed for file ${request.fileToGenerate[i]}:',
-            )
-            ..writeAll([e, stacktrace, request.protoFile[i]]);
-          response.error = '$e';
-        }
       }
     });
     final responseBytes = response.writeToBuffer();

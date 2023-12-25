@@ -1,11 +1,15 @@
 syntax = 'proto3';
-
 package bestowcode.coresdk.application.v1;
 
+import 'google/protobuf/empty.proto';
 
 service ApplicationService {
-  rpc execute(ApplicationRequest) returns (ApplicationResponse);
-//  rpc fetchState(FetchStateRequest) returns (stream FetchStateResponse);
+  rpc AppendEvent(AppendEventRequest) returns (google.protobuf.Empty);
+  rpc AppendForward(AppendForwardRequest) returns (google.protobuf.Empty);
+  rpc AppendMerge(AppendMergeRequest) returns (google.protobuf.Empty);
+  rpc Publish(PublishRequest) returns (google.protobuf.Empty);
+  rpc GetView(GetViewRequest) returns (ApplicationView);
+  rpc ViewSnapshots(ViewSnapshotsRequest) returns (ApplicationSnapshot);
 }
 
 message ApplicationRequest {

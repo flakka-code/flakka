@@ -13,8 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class EventSourcedEntityDomainTypeDef extends $pb.GeneratedMessage {
-  factory EventSourcedEntityDomainTypeDef({
+class EventSourcedEntityDomainTypedef extends $pb.GeneratedMessage {
+  factory EventSourcedEntityDomainTypedef({
     $core.String? entityApiFieldNameOverride,
     $core.String? stateFieldNameOverride,
     $core.String? eventsFieldNameOverride,
@@ -31,11 +31,11 @@ class EventSourcedEntityDomainTypeDef extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  EventSourcedEntityDomainTypeDef._() : super();
-  factory EventSourcedEntityDomainTypeDef.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory EventSourcedEntityDomainTypeDef.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  EventSourcedEntityDomainTypedef._() : super();
+  factory EventSourcedEntityDomainTypedef.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory EventSourcedEntityDomainTypedef.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EventSourcedEntityDomainTypeDef', package: const $pb.PackageName(_omitMessageNames ? '' : 'flakkadomain.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'EventSourcedEntityDomainTypedef', package: const $pb.PackageName(_omitMessageNames ? '' : 'flakkadomain.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'entityApiFieldNameOverride')
     ..aOS(2, _omitFieldNames ? '' : 'stateFieldNameOverride')
     ..aOS(3, _omitFieldNames ? '' : 'eventsFieldNameOverride')
@@ -46,22 +46,22 @@ class EventSourcedEntityDomainTypeDef extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  EventSourcedEntityDomainTypeDef clone() => EventSourcedEntityDomainTypeDef()..mergeFromMessage(this);
+  EventSourcedEntityDomainTypedef clone() => EventSourcedEntityDomainTypedef()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  EventSourcedEntityDomainTypeDef copyWith(void Function(EventSourcedEntityDomainTypeDef) updates) => super.copyWith((message) => updates(message as EventSourcedEntityDomainTypeDef)) as EventSourcedEntityDomainTypeDef;
+  EventSourcedEntityDomainTypedef copyWith(void Function(EventSourcedEntityDomainTypedef) updates) => super.copyWith((message) => updates(message as EventSourcedEntityDomainTypedef)) as EventSourcedEntityDomainTypedef;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static EventSourcedEntityDomainTypeDef create() => EventSourcedEntityDomainTypeDef._();
-  EventSourcedEntityDomainTypeDef createEmptyInstance() => create();
-  static $pb.PbList<EventSourcedEntityDomainTypeDef> createRepeated() => $pb.PbList<EventSourcedEntityDomainTypeDef>();
+  static EventSourcedEntityDomainTypedef create() => EventSourcedEntityDomainTypedef._();
+  EventSourcedEntityDomainTypedef createEmptyInstance() => create();
+  static $pb.PbList<EventSourcedEntityDomainTypedef> createRepeated() => $pb.PbList<EventSourcedEntityDomainTypedef>();
   @$core.pragma('dart2js:noInline')
-  static EventSourcedEntityDomainTypeDef getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EventSourcedEntityDomainTypeDef>(create);
-  static EventSourcedEntityDomainTypeDef? _defaultInstance;
+  static EventSourcedEntityDomainTypedef getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EventSourcedEntityDomainTypedef>(create);
+  static EventSourcedEntityDomainTypedef? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get entityApiFieldNameOverride => $_getSZ(0);
@@ -92,7 +92,7 @@ class EventSourcedEntityDomainTypeDef extends $pb.GeneratedMessage {
 }
 
 class Entity_domain {
-  static final eventSourcedEntity = $pb.Extension<EventSourcedEntityDomainTypeDef>.repeated(_omitMessageNames ? '' : 'google.protobuf.MessageOptions', _omitFieldNames ? '' : 'eventSourcedEntity', 43353498, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: EventSourcedEntityDomainTypeDef.create);
+  static final eventSourcedEntity = $pb.Extension<EventSourcedEntityDomainTypedef>.repeated(_omitMessageNames ? '' : 'google.protobuf.MessageOptions', _omitFieldNames ? '' : 'eventSourcedEntity', 43353498, $pb.PbFieldType.PM, check: $pb.getCheckFunction($pb.PbFieldType.PM), subBuilder: EventSourcedEntityDomainTypedef.create);
   static void registerAllExtensions($pb.ExtensionRegistry registry) {
     registry.add(eventSourcedEntity);
   }

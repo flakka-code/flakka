@@ -10,6 +10,7 @@ dependencies:
   antlr4:
   built_value:
   built_collection:
+  collection:
   core_protoc:
   path:
   protobuf:

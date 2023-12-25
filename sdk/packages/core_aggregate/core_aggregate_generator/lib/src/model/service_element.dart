@@ -10,5 +10,7 @@ abstract class ServiceElement
   factory ServiceElement([void Function(ServiceElementBuilder) updates]) =
       _$ServiceElement;
 
+  FileDescriptorProto get fileDescriptor;
+
   ServiceDescriptorProto get serviceDescriptor;
 }

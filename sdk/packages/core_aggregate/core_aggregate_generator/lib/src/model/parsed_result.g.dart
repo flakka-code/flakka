@@ -9,13 +9,19 @@ part of 'parsed_result.dart';
 class _$ParsedResult extends ParsedResult {
   @override
   final BuiltMap<FileDescriptorProto, FileElement> fileElements;
+  @override
+  final BuiltList<EntityApiElement> entityApiElements;
 
   factory _$ParsedResult([void Function(ParsedResultBuilder)? updates]) =>
       (new ParsedResultBuilder()..update(updates))._build();
 
-  _$ParsedResult._({required this.fileElements}) : super._() {
+  _$ParsedResult._(
+      {required this.fileElements, required this.entityApiElements})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(
         fileElements, r'ParsedResult', 'fileElements');
+    BuiltValueNullFieldError.checkNotNull(
+        entityApiElements, r'ParsedResult', 'entityApiElements');
   }
 
   @override
@@ -28,13 +34,16 @@ class _$ParsedResult extends ParsedResult {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is ParsedResult && fileElements == other.fileElements;
+    return other is ParsedResult &&
+        fileElements == other.fileElements &&
+        entityApiElements == other.entityApiElements;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, fileElements.hashCode);
+    _$hash = $jc(_$hash, entityApiElements.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -42,7 +51,8 @@ class _$ParsedResult extends ParsedResult {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ParsedResult')
-          ..add('fileElements', fileElements))
+          ..add('fileElements', fileElements)
+          ..add('entityApiElements', entityApiElements))
         .toString();
   }
 }
@@ -59,12 +69,19 @@ class ParsedResultBuilder
           MapBuilder<FileDescriptorProto, FileElement>? fileElements) =>
       _$this._fileElements = fileElements;
 
+  ListBuilder<EntityApiElement>? _entityApiElements;
+  ListBuilder<EntityApiElement> get entityApiElements =>
+      _$this._entityApiElements ??= new ListBuilder<EntityApiElement>();
+  set entityApiElements(ListBuilder<EntityApiElement>? entityApiElements) =>
+      _$this._entityApiElements = entityApiElements;
+
   ParsedResultBuilder();
 
   ParsedResultBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _fileElements = $v.fileElements.toBuilder();
+      _entityApiElements = $v.entityApiElements.toBuilder();
       _$v = null;
     }
     return this;
@@ -87,13 +104,17 @@ class ParsedResultBuilder
   _$ParsedResult _build() {
     _$ParsedResult _$result;
     try {
-      _$result =
-          _$v ?? new _$ParsedResult._(fileElements: fileElements.build());
+      _$result = _$v ??
+          new _$ParsedResult._(
+              fileElements: fileElements.build(),
+              entityApiElements: entityApiElements.build());
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'fileElements';
         fileElements.build();
+        _$failedField = 'entityApiElements';
+        entityApiElements.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'ParsedResult', _$failedField, e.toString());

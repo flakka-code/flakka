@@ -8,12 +8,18 @@ part of 'service_element.dart';
 
 class _$ServiceElement extends ServiceElement {
   @override
+  final FileDescriptorProto fileDescriptor;
+  @override
   final ServiceDescriptorProto serviceDescriptor;
 
   factory _$ServiceElement([void Function(ServiceElementBuilder)? updates]) =>
       (new ServiceElementBuilder()..update(updates))._build();
 
-  _$ServiceElement._({required this.serviceDescriptor}) : super._() {
+  _$ServiceElement._(
+      {required this.fileDescriptor, required this.serviceDescriptor})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        fileDescriptor, r'ServiceElement', 'fileDescriptor');
     BuiltValueNullFieldError.checkNotNull(
         serviceDescriptor, r'ServiceElement', 'serviceDescriptor');
   }
@@ -30,12 +36,14 @@ class _$ServiceElement extends ServiceElement {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ServiceElement &&
+        fileDescriptor == other.fileDescriptor &&
         serviceDescriptor == other.serviceDescriptor;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, fileDescriptor.hashCode);
     _$hash = $jc(_$hash, serviceDescriptor.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -44,6 +52,7 @@ class _$ServiceElement extends ServiceElement {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ServiceElement')
+          ..add('fileDescriptor', fileDescriptor)
           ..add('serviceDescriptor', serviceDescriptor))
         .toString();
   }
@@ -52,6 +61,11 @@ class _$ServiceElement extends ServiceElement {
 class ServiceElementBuilder
     implements Builder<ServiceElement, ServiceElementBuilder> {
   _$ServiceElement? _$v;
+
+  FileDescriptorProto? _fileDescriptor;
+  FileDescriptorProto? get fileDescriptor => _$this._fileDescriptor;
+  set fileDescriptor(FileDescriptorProto? fileDescriptor) =>
+      _$this._fileDescriptor = fileDescriptor;
 
   ServiceDescriptorProto? _serviceDescriptor;
   ServiceDescriptorProto? get serviceDescriptor => _$this._serviceDescriptor;
@@ -63,6 +77,7 @@ class ServiceElementBuilder
   ServiceElementBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _fileDescriptor = $v.fileDescriptor;
       _serviceDescriptor = $v.serviceDescriptor;
       _$v = null;
     }
@@ -86,6 +101,8 @@ class ServiceElementBuilder
   _$ServiceElement _build() {
     final _$result = _$v ??
         new _$ServiceElement._(
+            fileDescriptor: BuiltValueNullFieldError.checkNotNull(
+                fileDescriptor, r'ServiceElement', 'fileDescriptor'),
             serviceDescriptor: BuiltValueNullFieldError.checkNotNull(
                 serviceDescriptor, r'ServiceElement', 'serviceDescriptor'));
     replace(_$result);

@@ -6,7 +6,6 @@ package acmeapis.example.v1;
 import 'flakkadomain/v1/domain_root.proto';
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
-import "kalix/annotations.proto";
 
 option (flakkadomain.v1.domain_root) = {
   entities: ["acmeapis.example.counter.v1.counter"]
