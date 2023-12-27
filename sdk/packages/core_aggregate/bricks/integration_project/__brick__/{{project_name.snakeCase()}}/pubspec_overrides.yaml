@@ -1,0 +1,18 @@
+# melos_managed_dependency_overrides: core_aggregate,core_aggregate_api,core_aggregate_build,core_aggregate_generator,core_analysis,core_application,core_protoc,protocolbuffers_wellknowntypes
+dependency_overrides:
+  core_aggregate:
+    path: ../../../core_aggregate
+  core_aggregate_api:
+    path: ../../../core_aggregate_api
+  core_aggregate_build:
+    path: ../../../core_aggregate_build
+  core_aggregate_generator:
+    path: ../../../core_aggregate_generator
+  core_analysis:
+    path: ../../../../core_analysis
+  core_application:
+    path: ../../../../core_application
+  core_protoc:
+    path: ../../../../core_protoc/core_protoc
+  protocolbuffers_wellknowntypes:
+    path: ../../../../protocolbuffers_wellknowntypes

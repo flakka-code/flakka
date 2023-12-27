@@ -10,17 +10,11 @@ void testHarness() {
 
 class TestGenerator extends CodeGeneratorBase {
   @override
-  ExtensionRegistry get extensionRegistry => throw UnimplementedError();
+  ExtensionRegistry get extensionRegistry => ExtensionRegistry();
 
   @override
-  Map<String, String> generate(String filename, FileDescriptorProto input) {
-    // throw UnimplementedError();
+  Map<String, String> generate(List<FileDescriptorProto> resources, List<FileDescriptorProto> inputs) {
     return {'.harness-test': 'hello'};
   }
 
-  @override
-  void prepare(
-      List<FileDescriptorProto> resources, List<FileDescriptorProto> inputs) {
-    // throw UnimplementedError();
-  }
 }

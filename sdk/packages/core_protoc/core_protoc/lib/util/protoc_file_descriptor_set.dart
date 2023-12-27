@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:core_protoc/core_protoc.dart';
 import 'package:path/path.dart' as p;
 import 'package:protobuf/protobuf.dart';
 import 'package:protocolbuffers_wellknowntypes/google/protobuf/descriptor.pb.dart';
@@ -32,4 +33,28 @@ void protocCompileFileDescriptorSet(Iterable<String> sourceDirectories,
     processResult.exitCode == 0,
     'protoc failed: ${processResult.stderr}${processResult.stdout}',
   );
+}
+
+Map<String, String> runGenerator(CodeGeneratorBase generator,
+    List<String> sourcePaths,
+    Directory targetDirectory,
+    ) {
+  final targetFiles = targetDirectory
+      .listSync(recursive: true)
+      .whereType<File>()
+      .where((element) => p.extension(element.path) == '.proto')
+      .map((e) => e.path);
+  final sourceFileDescriptorSet = readFileDescriptorSet(
+      [...sourcePaths, targetDirectory.path],
+      targetFiles,
+      generator.extensionRegistry);
+  final targetFilesRelative = targetFiles
+      .map((e) => p.relative(e, from: targetDirectory.path))
+      .toList();
+  final targetFileDescriptorSet = sourceFileDescriptorSet.file
+      .where((element) => targetFilesRelative.contains(element.name))
+      .toList();
+  final result =
+  generator.generate(sourceFileDescriptorSet.file, targetFileDescriptorSet);
+  return result;
 }

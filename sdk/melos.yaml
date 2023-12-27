@@ -7,3 +7,4 @@ packages:
   - packages/**
 ignore:
   - packages/core_aggregate/core_aggregate_api/test/**
+  - '**/bricks/**'

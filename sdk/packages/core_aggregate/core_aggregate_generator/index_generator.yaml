@@ -1,6 +1,6 @@
 index_generator:
-#  exclude:
-#    - '**.*.dart'
+  exclude:
+    - '**.*.dart'
   indexes:
     - path: lib
       name: core_aggregate_generator

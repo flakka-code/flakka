@@ -11,34 +11,14 @@ void main() {
     Directory('proto').path,
   ];
   final testProtoDirectories =
-  Directory('test/functional/protos').listSync().whereType<Directory>();
+      Directory('test/functional/protos').listSync().whereType<Directory>();
 
   for (final directory in testProtoDirectories) {
     final name = p.basename(directory.path);
     test('generator golden: ${name}', () async {
-      final targetFiles = directory
-          .listSync(recursive: true)
-          .whereType<File>()
-          .where((element) => p.extension(element.path) == '.proto')
-          .map((e) => e.path);
-      final generator = Generator();
-      final sourceFileDescriptorSet = readFileDescriptorSet(
-          [...sourceDirectories, directory.path],
-          targetFiles,
-          generator.extensionRegistry);
-      final targetFilesRelative = targetFiles.map((e) =>
-          p.relative(e, from: directory.path)).toList();
-      print(targetFilesRelative);
-      print(sourceFileDescriptorSet.file.map((e) => e.name));
-      final targetFileDescriptorSet = sourceFileDescriptorSet.file
-          .where((element) => targetFilesRelative.contains(element.name))
-          .toList();
-      final result = generator.generate(
-          sourceFileDescriptorSet.file, targetFileDescriptorSet);
+      Map<String, String> result =
+          runGenerator(Generator(), sourceDirectories, directory);
       assert(result.isNotEmpty, '');
-      // print(sourceFileDescriptorSet);
-      // print(result);
-      // Generator().
     });
   }
   // .listSync(recursive: true)

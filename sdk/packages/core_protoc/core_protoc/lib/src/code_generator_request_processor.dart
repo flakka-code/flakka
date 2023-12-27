@@ -32,6 +32,7 @@ class CodeGeneratorRequestProcessor {
     final response = CodeGeneratorResponse();
     fork.run(() {
       try {
+        response.file.add(CodeGeneratorResponse_File(name: 'hello.txt', content: 'hello world\n'));
         _generator
             .generate(request.sourceFileDescriptors, request.protoFile)
             .forEach((filename, content) {

@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:core_protoc/util/protoc_file_descriptor_set.dart';
 import 'package:path/path.dart' as p;
+import 'package:protobuf/protobuf.dart';
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 
@@ -13,7 +14,11 @@ void main() {
         .whereType<File>()
         .where((file) => p.extension(file.path) == '.proto')
         .map((e) => e.path);
-    final result = readFileDescriptorSet(sourceDirectories, generateFiles);
+    final result = readFileDescriptorSet(
+      sourceDirectories,
+      generateFiles,
+      ExtensionRegistry(),
+    );
     expect(result.file.length, 1);
     expect(result.file.single.messageType.length, 1);
   });

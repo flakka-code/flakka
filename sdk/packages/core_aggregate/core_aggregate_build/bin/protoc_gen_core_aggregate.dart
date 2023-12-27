@@ -54,6 +54,7 @@ void main() async {
   final reader =
       CodedBufferReader(o.values.first, sizeLimit: o.values.first.length);
   final response = CodeGeneratorResponse();
+
   response.mergeFromCodedBufferReader(reader, ExtensionRegistry.EMPTY);
   // stderr.writeln('$response');
 
