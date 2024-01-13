@@ -1,0 +1,16 @@
+index_generator:
+  exclude:
+    - '**.*.dart'
+  indexes:
+    - path: lib
+      name: {{project_name.snakeCase()}}_api
+      include:
+        - src/api
+    - path: lib
+      name: {{project_name.snakeCase()}}_base
+      include:
+        - src/base
+    - path: lib
+      name: {{project_name.snakeCase()}}
+      include:
+        - src/core

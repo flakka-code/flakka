@@ -1,4 +1,0 @@
-syntax = 'proto3';
-package acmeinternal.app1.v1;
-
-import 'acmeinternal/app1/v1/app1_internal_schema.proto';

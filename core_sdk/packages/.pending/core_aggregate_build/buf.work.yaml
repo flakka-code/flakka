@@ -1,0 +1,4 @@
+version: v1
+directories:
+#  - core_persistence_proto/protos
+  - protos

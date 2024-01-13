@@ -1,0 +1,12 @@
+// This is the public API offered by your entity.
+syntax = "proto3";
+
+package acmeapis.example.v1;
+
+import 'flakkadomain/v1/domain_root.proto';
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+
+option (flakkadomain.v1.domain_root) = {
+  entities: ["acmeapis.example.counter.v1.counter"]
+};

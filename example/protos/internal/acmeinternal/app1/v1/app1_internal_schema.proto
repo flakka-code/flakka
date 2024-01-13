@@ -1,3 +1,0 @@
-syntax = 'proto3';
-
-package acmeinternal.app1.v1;

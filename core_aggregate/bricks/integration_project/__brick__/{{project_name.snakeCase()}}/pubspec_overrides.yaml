@@ -1,0 +1,12 @@
+# melos_managed_dependency_overrides: core_aggregate_generator,core_protoc,core_aggregate_analyzer,protoc_plugin_support,core_aggregate_domain
+dependency_overrides:
+  core_aggregate_analyzer:
+    path: ../../../core_aggregate_analyzer
+  core_aggregate_domain:
+    path: ../../../core_aggregate_domain
+  core_aggregate_generator:
+    path: ../../../core_aggregate_generator
+  core_protoc:
+    path: ../../../../core_protoc/core_protoc
+  protoc_plugin_support:
+    path: ../../../../protoc_plugin_support

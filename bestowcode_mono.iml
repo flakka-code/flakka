@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/core_aggregate_parser/lib/src/generated" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/bricks/flakka_api_package/__brick__/{{project_name.snakeCase()}}/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/bricks/flakka_api_package/__brick__/{{project_name.snakeCase()}}/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/bricks/flakka_api_package/__brick__/{{project_name.snakeCase()}}/build" />
+      <excludeFolder url="file://$MODULE_DIR$/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/bricks/integration_project/__brick__/{{project_name.snakeCase()}}/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/bricks/integration_project/__brick__/{{project_name.snakeCase()}}/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/bricks/integration_project/__brick__/{{project_name.snakeCase()}}/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/core_aggregate_analyzer/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/core_aggregate_analyzer/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/core_aggregate_analyzer/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/core_aggregate_domain/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/core_aggregate_domain/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/core_aggregate_domain/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/core_aggregate_generator/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/core_aggregate_generator/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/core_aggregate_generator/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/core_aggregate_parser/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/core_aggregate_parser/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/core_aggregate_parser/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/integration_builder/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/integration_builder/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/integration_builder/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/integration_builder/development_build/integration_2/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/integration_builder/development_build/integration_2/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/integration_builder/development_build/integration_2/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/integration_builder/test_build/integration_28/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/integration_builder/test_build/integration_28/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_aggregate/packages/core_aggregate/integration_builder/test_build/integration_28/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/bricks/proto/hooks/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/bricks/proto/hooks/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/bricks/proto/hooks/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/bricks/very_good_dart_package/__brick__/{{project_name.snakeCase()}}/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/bricks/very_good_dart_package/__brick__/{{project_name.snakeCase()}}/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/bricks/very_good_dart_package/__brick__/{{project_name.snakeCase()}}/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/.pending/core_aggregate/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/.pending/core_aggregate/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/.pending/core_aggregate/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/.pending/core_aggregate_api/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/.pending/core_aggregate_api/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/.pending/core_aggregate_api/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/.pending/core_aggregate_build/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/.pending/core_aggregate_build/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/.pending/core_aggregate_build/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/core_analysis/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/core_analysis/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/core_analysis/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/core_application/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/core_application/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/core_application/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/core_protoc/core_protoc/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/core_protoc/core_protoc/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/core_protoc/core_protoc/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/core_protoc/core_protoc_test/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/core_protoc/core_protoc_test/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/core_protoc/core_protoc_test/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/protoc_plugin_support/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/protoc_plugin_support/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/packages/protoc_plugin_support/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/example/counter/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/example/counter/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/example/counter/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/example/packages/acmeapis-dart/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/example/packages/acmeapis-dart/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/example/packages/acmeapis-dart/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/example/packages/acmesdk-dart/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/example/packages/acmesdk-dart/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/example/packages/acmesdk-dart/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/packages/flakka/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/packages/flakka/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/packages/flakka/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/packages/flakka_generator/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/packages/flakka_generator/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flakka/packages/flakka_generator/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/bricks/core_package/__brick__/{{project_name.snakeCase()}}/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/bricks/core_package/__brick__/{{project_name.snakeCase()}}/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/bricks/core_package/__brick__/{{project_name.snakeCase()}}/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/bricks/core_package/hooks/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/bricks/core_package/hooks/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_sdk/bricks/core_package/hooks/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Dart SDK" level="project" />
+    <orderEntry type="library" name="Dart Packages" level="project" />
+  </component>
+</module>

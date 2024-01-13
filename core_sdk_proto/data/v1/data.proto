@@ -1,0 +1,50 @@
+syntax = 'proto3';
+
+package bestowcode.coresdk.data.v1;
+import "google/protobuf/descriptor.proto";
+
+service DataService {
+  //  rpc append(DataAppendRequest) returns (DataAppendResponse);
+  //  rpc fetchEntries(FetchEntriesRequest) returns (FetchEntriesResponse);
+  //  rpc getStateRefs(GetStateRefsRequest) returns (GetStateRefsResponse);
+  //  rpc getState(GetStateRequest) returns (GetStateResponse);
+}
+
+extend google.protobuf.ServiceOptions {
+  optional ObjectRequestMetadataSpec spec = 525600;
+}
+// Spec to describe the metadata for a request call
+message ObjectRequestMetadataSpec {
+  // key name for the rpc request metadata parameter specifying the object name for the application instance
+  // optional - defaults to "object_key"
+  string object_key_key_name = 1;
+  // key name for the rpc request metadata parameter specifying the head name (usually the device id) for the instance of
+  // the application on which to operate
+  // optional - defaults to "head_name"
+  string head_name_key_name = 2;
+}
+
+service ObjectService {
+  option (spec) = {};
+  rpc Process(stream ObjectRequest) returns (stream ObjectProcessUpdate) ;
+  rpc GetEntryList(GetEntryListRequest) returns (GetEntryListResponse);
+  rpc GetStateViewTreeList(GetStateViewTreeListRequest) returns (GetStateViewTreeListResponse);
+  rpc GetStateViewTree(GetStateViewTreeRequest) returns (GetStateViewTreeResponse);
+}
+message ObjectRequest {// Provision
+  // Add Entry
+  // Add StateView
+  // Add StateViewTree
+}
+
+message ObjectProcessUpdate {}
+
+message  GetStateViewTreeListRequest{
+  string start_after_ref = 1;
+}
+message GetStateViewTreeListResponse {
+  repeated string tree_ref = 1;
+}
+message GetStateViewTreeRequest {
+  string ref = 1;
+}

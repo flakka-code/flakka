@@ -1,0 +1,12 @@
+version: v1
+name: buf.build/acmeapis/acmeapis
+breaking:
+  use:
+    - FILE
+lint:
+  use:
+    - DEFAULT
+deps:
+  - buf.build/bestowcode/dartoptions
+  - buf.build/bestowcode/coresdk
+  - buf.build/googleapis/googleapis

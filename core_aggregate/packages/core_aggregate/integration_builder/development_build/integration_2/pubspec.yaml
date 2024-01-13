@@ -1,0 +1,17 @@
+name: integration_2
+description: 
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+dependencies:
+#  core_aggregate:
+  core_aggregate_domain:
+  core_aggregate_generator:
+  core_protoc:
+
+dev_dependencies:
+  mocktail: ^1.0.0
+  test: ^1.19.2
+  very_good_analysis: ^5.1.0

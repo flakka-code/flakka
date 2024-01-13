@@ -1,0 +1,6 @@
+
+service WidgetService {
+
+}
+
+service WidgetsService {}

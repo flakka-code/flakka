@@ -1,0 +1,34 @@
+syntax = "proto2";
+
+package flakkadomain.v1;
+
+import "google/protobuf/descriptor.proto";
+
+message EventSourcedEntitySpec {
+  // name of the nested message referencing the entity api this entity fulfills
+  // optional - default to "EntityApi"
+  // message EntityApi {
+  //   CounterEntityApi counter_entity_api = 1;
+  // }
+  optional string entity_api_message_name = 1;
+  // name of the nested message specifying the state
+  // the nested state message should contain a single field with a type reference which defines this entity's state
+  // optional - default to "State", example:
+  // message State {
+  //   CounterState counter_state = 1;
+  // }
+  optional string state_message_name = 2;
+  // name of the nested message specifying the events produced by this entity
+  // the nested state message should contain a field with a type reference defining each event this entity may produce
+  // optional - default to "Event"
+  // message Event {
+  //   ValueIncreased value_increased = 1;
+  //   ValueDecreased value_decreased = 2;
+  //   ValueReset value_reset = 3;
+  // }
+  optional string event_message_name = 3;
+}
+
+extend google.protobuf.MessageOptions {
+  repeated EventSourcedEntitySpec event_sourced_entity = 43353498;
+}

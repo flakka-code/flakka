@@ -1,0 +1,22 @@
+name: core_protoc
+description: Toolkit to develop protoc-gen plugins
+version: 0.1.0+1
+
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  built_collection:
+  built_value:
+  path:
+  protobuf:
+  protoc_plugin_support:
+  protoc_plugin:
+
+dev_dependencies:
+  build_runner:
+  built_value_generator:
+  mocktail: ^1.0.0
+  test:
+  core_analysis: 

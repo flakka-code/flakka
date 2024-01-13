@@ -1,0 +1,29 @@
+#
+#targets:
+#  $default:
+#    builders:
+#      core_aggregate_generator:core_aggregate_generator:
+#        enabled: true
+#        generate_for:
+#          include:
+#            - "$project$"
+#builders:
+#  core_aggregate_generator:
+#    import: "package:core_aggregate_generator/core_aggregate_generator.dart"
+#    builder_factories: ["ProtocPluginRunnableBuilder.new"]
+#    build_extensions: {"$project$": [".dart_tool/bin/protoc-gen-flakka"]}
+#    build_to: source
+#    auto_apply: dependents
+#    defaults:
+#      generate_for:
+#        include:
+#          - "$project$"
+#      release_options:
+#        some_key: "Some value the users will want in release mode"
+#builders:
+#  your_builder:
+#    import: "package:your_package/your_builder.dart"
+#    builder_factories: ["yourBuilderFactory"]
+#    build_extensions: {"$project$": [".dart_tool/bin/protoc-gen-flakka"]}
+#    auto_apply: root_package
+#    build_to: cache

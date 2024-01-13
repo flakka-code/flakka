@@ -1,5 +1,0 @@
-bricks:
-  package:
-    path: bricks/package
-  proto:
-    path: bricks/protos

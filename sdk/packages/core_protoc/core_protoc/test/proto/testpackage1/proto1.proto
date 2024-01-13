@@ -1,5 +1,0 @@
-syntax = 'proto3';
-
-package testpackage1;
-
-message PluginInterfaceTestArtifact {}

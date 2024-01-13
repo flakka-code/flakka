@@ -1,0 +1,16 @@
+index_generator:
+  exclude:
+    - '**.*.dart'
+  indexes:
+    - path: lib
+      name: analyzer
+      include:
+        - src/analyzer
+    - path: lib
+      name: element
+      include:
+        - src/element/api
+    - path: lib
+      name: element_impl
+      include:
+        - src/element/impl

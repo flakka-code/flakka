@@ -1,7 +1,0 @@
-syntax = 'proto3';
-
-package bestowcode.coresdk.aggregate.v1;
-
-service AggregateService {
-//  rpc transact(TransactionRequest) returns (TransactionResponse);
-}

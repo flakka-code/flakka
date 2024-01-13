@@ -1,7 +1,0 @@
-# buf.gen.yaml
-version: v1
-plugins:
-  - plugin: buf.build/protocolbuffers/dart:v21.1.2
-    out: ../../src/generated
-    opt:
-      - grpc

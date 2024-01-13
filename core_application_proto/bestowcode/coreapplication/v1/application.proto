@@ -1,0 +1,39 @@
+syntax = 'proto3';
+
+package bestowcode.coreapplication.v1;
+
+import "bestowcode/coreapplication/v1/application_request_spec.proto";
+import "google/protobuf/descriptor.proto";
+service ApplicationService {
+  option (spec) = {};
+  rpc Process(stream ProcessRequest) returns (stream ProcessResponse);
+}
+
+message ProcessRequest {
+  string ref = 1;
+  oneof body {
+    Provision provision = 2;
+    Append append = 3;
+    Publish publish = 4;
+  }
+  message Provision {}
+  message Append {
+    message Event {}
+    message Forward {}
+    message Merge {}
+  }
+  message Publish {
+    string current_ref = 1;
+    string publish_ref = 2;
+  }
+}
+message ProcessResponse {
+  oneof value {
+    ApplicationReady ready = 1;
+    MergeReady merge_ready = 2;
+    FastForwardReady fast_forward_ready = 3;
+  }
+  message ApplicationReady {}
+  message MergeReady {}
+  message FastForwardReady {}
+}

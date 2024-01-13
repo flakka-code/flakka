@@ -1,0 +1,9 @@
+syntax = 'proto3';
+
+package bestowcode.coresdk.persistence.v1;
+
+import 'bestowcode/coresdk/persistence/v1/persistence_local.proto';
+//import 'bestowcode/coresdk/persistence/'
+message A {
+
+}
