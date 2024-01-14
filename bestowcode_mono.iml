@@ -91,6 +91,9 @@
       <excludeFolder url="file://$MODULE_DIR$/flakka/packages/flakka_generator/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/flakka/packages/flakka_generator/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/flakka/packages/flakka_generator/build" />
+      <excludeFolder url="file://$MODULE_DIR$/core_application/packages/core_application/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/core_application/packages/core_application/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/core_application/packages/core_application/build" />
       <excludeFolder url="file://$MODULE_DIR$/core_sdk/bricks/core_package/__brick__/{{project_name.snakeCase()}}/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/core_sdk/bricks/core_package/__brick__/{{project_name.snakeCase()}}/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/core_sdk/bricks/core_package/__brick__/{{project_name.snakeCase()}}/build" />

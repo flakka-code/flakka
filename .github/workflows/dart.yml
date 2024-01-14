@@ -47,9 +47,9 @@ jobs:
         uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84
         with:
           path: "~/.pub-cache/hosted"
-          key: "os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:sdk/packages/core_aggregate/core_aggregate_analyzer;commands:analyze"
+          key: "os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:core_aggregate/packages/core_aggregate/core_aggregate_analyzer;commands:analyze"
           restore-keys: |
-            os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:sdk/packages/core_aggregate/core_aggregate_analyzer
+            os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:core_aggregate/packages/core_aggregate/core_aggregate_analyzer
             os:ubuntu-latest;pub-cache-hosted;sdk:dev
             os:ubuntu-latest;pub-cache-hosted
             os:ubuntu-latest
@@ -60,15 +60,15 @@ jobs:
       - id: checkout
         name: Checkout repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
-      - id: sdk_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade
-        name: sdk/packages/core_aggregate/core_aggregate_analyzer; dart pub upgrade
+      - id: core_aggregate_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade
+        name: core_aggregate/packages/core_aggregate/core_aggregate_analyzer; dart pub upgrade
         run: dart pub upgrade
         if: "always() && steps.checkout.conclusion == 'success'"
-        working-directory: sdk/packages/core_aggregate/core_aggregate_analyzer
-      - name: sdk/packages/core_aggregate/core_aggregate_analyzer; dart analyze
+        working-directory: core_aggregate/packages/core_aggregate/core_aggregate_analyzer
+      - name: core_aggregate/packages/core_aggregate/core_aggregate_analyzer; dart analyze
         run: dart analyze
-        if: "always() && steps.sdk_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade.conclusion == 'success'"
-        working-directory: sdk/packages/core_aggregate/core_aggregate_analyzer
+        if: "always() && steps.core_aggregate_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade.conclusion == 'success'"
+        working-directory: core_aggregate/packages/core_aggregate/core_aggregate_analyzer
   job_003:
     name: "analyze_and_format; `dart format --output=none --set-exit-if-changed .`"
     runs-on: ubuntu-latest
@@ -77,9 +77,9 @@ jobs:
         uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84
         with:
           path: "~/.pub-cache/hosted"
-          key: "os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:sdk/packages/core_aggregate/core_aggregate_analyzer;commands:format"
+          key: "os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:core_aggregate/packages/core_aggregate/core_aggregate_analyzer;commands:format"
           restore-keys: |
-            os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:sdk/packages/core_aggregate/core_aggregate_analyzer
+            os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:core_aggregate/packages/core_aggregate/core_aggregate_analyzer
             os:ubuntu-latest;pub-cache-hosted;sdk:dev
             os:ubuntu-latest;pub-cache-hosted
             os:ubuntu-latest
@@ -90,15 +90,15 @@ jobs:
       - id: checkout
         name: Checkout repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
-      - id: sdk_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade
-        name: sdk/packages/core_aggregate/core_aggregate_analyzer; dart pub upgrade
+      - id: core_aggregate_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade
+        name: core_aggregate/packages/core_aggregate/core_aggregate_analyzer; dart pub upgrade
         run: dart pub upgrade
         if: "always() && steps.checkout.conclusion == 'success'"
-        working-directory: sdk/packages/core_aggregate/core_aggregate_analyzer
-      - name: "sdk/packages/core_aggregate/core_aggregate_analyzer; dart format --output=none --set-exit-if-changed ."
+        working-directory: core_aggregate/packages/core_aggregate/core_aggregate_analyzer
+      - name: "core_aggregate/packages/core_aggregate/core_aggregate_analyzer; dart format --output=none --set-exit-if-changed ."
         run: "dart format --output=none --set-exit-if-changed ."
-        if: "always() && steps.sdk_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade.conclusion == 'success'"
-        working-directory: sdk/packages/core_aggregate/core_aggregate_analyzer
+        if: "always() && steps.core_aggregate_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade.conclusion == 'success'"
+        working-directory: core_aggregate/packages/core_aggregate/core_aggregate_analyzer
   job_004:
     name: "unit_test; `dart test`"
     runs-on: ubuntu-latest
@@ -107,9 +107,9 @@ jobs:
         uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84
         with:
           path: "~/.pub-cache/hosted"
-          key: "os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:sdk/packages/core_aggregate/core_aggregate_analyzer;commands:test"
+          key: "os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:core_aggregate/packages/core_aggregate/core_aggregate_analyzer;commands:test"
           restore-keys: |
-            os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:sdk/packages/core_aggregate/core_aggregate_analyzer
+            os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:core_aggregate/packages/core_aggregate/core_aggregate_analyzer
             os:ubuntu-latest;pub-cache-hosted;sdk:dev
             os:ubuntu-latest;pub-cache-hosted
             os:ubuntu-latest
@@ -120,15 +120,15 @@ jobs:
       - id: checkout
         name: Checkout repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
-      - id: sdk_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade
-        name: sdk/packages/core_aggregate/core_aggregate_analyzer; dart pub upgrade
+      - id: core_aggregate_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade
+        name: core_aggregate/packages/core_aggregate/core_aggregate_analyzer; dart pub upgrade
         run: dart pub upgrade
         if: "always() && steps.checkout.conclusion == 'success'"
-        working-directory: sdk/packages/core_aggregate/core_aggregate_analyzer
-      - name: sdk/packages/core_aggregate/core_aggregate_analyzer; dart test
+        working-directory: core_aggregate/packages/core_aggregate/core_aggregate_analyzer
+      - name: core_aggregate/packages/core_aggregate/core_aggregate_analyzer; dart test
         run: dart test
-        if: "always() && steps.sdk_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade.conclusion == 'success'"
-        working-directory: sdk/packages/core_aggregate/core_aggregate_analyzer
+        if: "always() && steps.core_aggregate_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade.conclusion == 'success'"
+        working-directory: core_aggregate/packages/core_aggregate/core_aggregate_analyzer
     needs:
       - job_001
       - job_002
@@ -141,9 +141,9 @@ jobs:
         uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84
         with:
           path: "~/.pub-cache/hosted"
-          key: "os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:sdk/packages/core_aggregate/core_aggregate_analyzer;commands:test"
+          key: "os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:core_aggregate/packages/core_aggregate/core_aggregate_analyzer;commands:test"
           restore-keys: |
-            os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:sdk/packages/core_aggregate/core_aggregate_analyzer
+            os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:core_aggregate/packages/core_aggregate/core_aggregate_analyzer
             os:ubuntu-latest;pub-cache-hosted;sdk:dev
             os:ubuntu-latest;pub-cache-hosted
             os:ubuntu-latest
@@ -154,15 +154,15 @@ jobs:
       - id: checkout
         name: Checkout repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
-      - id: sdk_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade
-        name: sdk/packages/core_aggregate/core_aggregate_analyzer; dart pub upgrade
+      - id: core_aggregate_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade
+        name: core_aggregate/packages/core_aggregate/core_aggregate_analyzer; dart pub upgrade
         run: dart pub upgrade
         if: "always() && steps.checkout.conclusion == 'success'"
-        working-directory: sdk/packages/core_aggregate/core_aggregate_analyzer
-      - name: sdk/packages/core_aggregate/core_aggregate_analyzer; dart test
+        working-directory: core_aggregate/packages/core_aggregate/core_aggregate_analyzer
+      - name: core_aggregate/packages/core_aggregate/core_aggregate_analyzer; dart test
         run: dart test
-        if: "always() && steps.sdk_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade.conclusion == 'success'"
-        working-directory: sdk/packages/core_aggregate/core_aggregate_analyzer
+        if: "always() && steps.core_aggregate_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade.conclusion == 'success'"
+        working-directory: core_aggregate/packages/core_aggregate/core_aggregate_analyzer
     needs:
       - job_001
       - job_002
