@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package flakkadomain.v1;
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.MessageOptions {
+  optional DomainRootSpec domain_root = 43653498;
+}
+message DomainRootSpec {
+  // name of the nested message describing the entities available via this root
+  // optional - default to "Entities"
+  string entities_message_name = 1;
+  repeated string entities = 2;
+}

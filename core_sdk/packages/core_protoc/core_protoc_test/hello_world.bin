@@ -1,0 +1,16 @@
+
+æ
+message_set.proto"(
+
+MessageSet*Àº«ú*Àº«úÿÿÿÿ:"ª
+TestMessage
+info (2.MessageSetRinfo
+i (Ri25
+ext1.MessageSetÈ¦k (2.ExtensionMessage1Rext125
+ext2.MessageSet¢éo (2.ExtensionMessage2Rext2"Q
+ExtensionMessage1
+a (Ra
+b (	Rb 
+c (2.ExtensionMessage2Rc"'
+ExtensionMessage2
+ints (Rints

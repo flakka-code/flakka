@@ -1,0 +1,13 @@
+name: core_sdk
+
+ide:
+  intellij:
+    moduleNamePrefix: ''
+packages:
+  - packages/**
+ignore:
+  - packages/core_aggregate/core_aggregate_api/test/**
+  - '**/bricks/**'
+  - '**/test_build/**'
+#  - '**/development_build/**'
+  - '**/.pending/**'

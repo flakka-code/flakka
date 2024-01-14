@@ -1,0 +1,16 @@
+# melos_managed_dependency_overrides: core_aggregate,core_aggregate_api,core_aggregate_build,core_analysis,core_protoc,core_protoc_test,protoc_plugin_support
+dependency_overrides:
+  core_aggregate:
+    path: ../../../core_sdk/packages/.pending/core_aggregate
+  core_aggregate_api:
+    path: ../../../core_sdk/packages/.pending/core_aggregate_api
+  core_aggregate_build:
+    path: ../../../core_sdk/packages/.pending/core_aggregate_build
+  core_analysis:
+    path: ../../../core_sdk/packages/core_analysis
+  core_protoc:
+    path: ../../../core_sdk/packages/core_protoc/core_protoc
+  core_protoc_test:
+    path: ../../../core_sdk/packages/core_protoc/core_protoc_test
+  protoc_plugin_support:
+    path: ../../../core_sdk/packages/protoc_plugin_support

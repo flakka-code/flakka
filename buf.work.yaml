@@ -1,0 +1,3 @@
+version: v1
+directories:
+  - core_application_proto

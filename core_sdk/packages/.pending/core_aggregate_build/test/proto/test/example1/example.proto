@@ -1,0 +1,18 @@
+syntax = 'proto3';
+package test.example1;
+
+//import 'google/protobuf/descriptor.proto';
+import 'test/example1/example2.proto';
+//import 'bestowcode/core_sdk_options.proto';
+
+
+message TaskId {
+  string value = 1
+  //  [(bestowcode.entity_id) = true]
+  ;
+
+}
+
+message TaskEntityState {
+  TaskId task_id = 1 ;
+}

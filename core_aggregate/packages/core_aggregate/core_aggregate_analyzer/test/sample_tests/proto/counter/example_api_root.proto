@@ -1,0 +1,15 @@
+// This is the public API offered by your entity.
+syntax = "proto3";
+
+package acmeapis.example.v1;
+
+import 'flakkaapi/v1/api_root.proto';
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "counter_api.proto";
+message ExampleApiRootTypeDef {
+  option (flakkaapi.v1.api_root) = {};
+  acmeapis.example.counter.v1.CounterEntityApi counter = 1;
+
+
+}

@@ -1,0 +1,14 @@
+{
+  "core_project_name": "journal",
+  "description": "An interface for interacting with typed data",
+  "publishable": true,
+  "dependencies": [
+    {"package": "core_data"},
+    {"package": "http2"},
+    {"package": "grpc"}
+  ],
+  "dev_dependencies": [
+    {"package": "core_analysis"},
+    {"package": "test", "version": "^1.19.2"}
+  ]
+}

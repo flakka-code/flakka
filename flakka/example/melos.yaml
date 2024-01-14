@@ -1,0 +1,13 @@
+name: example
+
+ide:
+  intellij:
+    moduleNamePrefix: ''
+packages:
+  - packages/**
+ignore:
+command:
+  bootstrap:
+    dependencyOverridePaths:
+      - ../sdk/packages/**
+      - ../main/packages/**

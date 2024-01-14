@@ -1,0 +1,30 @@
+name: core_aggregate_generator
+description: Proto generator plugin for core_aggregate interfaces
+version: 0.1.0+1
+
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  antlr4:
+  belatuk_code_buffer:
+  build:
+  built_value:
+  built_collection:
+  code_builder:
+  collection:
+  core_aggregate_analyzer:
+  core_protoc:
+  path:
+  protobuf:
+  protoc_plugin:
+  protoc_plugin_support:
+
+dev_dependencies:
+  build_runner:
+  built_value_generator:
+  built_value_test:
+  mocktail: ^1.0.0
+  test:
+  core_analysis: 

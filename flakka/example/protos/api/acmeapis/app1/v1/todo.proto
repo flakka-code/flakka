@@ -1,0 +1,15 @@
+syntax = 'proto3';
+
+package acmeapis.app1.v1;
+import "google/api/resource.proto";
+service TodoService {}
+message Todo {
+  string id = 1;
+  string label = 2;
+  bool is_complete = 3;
+  option (google.api.resource) = {
+    type: "acmeapis.app1.v1/TodoService"
+    pattern: "todos/{todo}"
+    name_field: "id"
+  };
+}

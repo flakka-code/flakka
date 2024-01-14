@@ -1,0 +1,12 @@
+{
+  "core_project_name": "persistence",
+  "description": "Persistence for Core Object",
+  "publishable": true,
+  "dependencies": [
+    {"package": "grpc"}
+  ],
+  "dev_dependencies": [
+    {"package": "core_analysis"},
+    {"package": "test", "version": "^1.19.2"}
+  ]
+}

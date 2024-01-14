@@ -1,0 +1,15 @@
+version: v1
+name: buf.build/acmeinternal/acmeinternal
+breaking:
+  use:
+    - FILE
+lint:
+  use:
+    - DEFAULT
+  ignore_only:
+    IMPORT_USED:
+      - acmeinternal/app1/v1/widget_internal.proto
+deps:
+  - buf.build/bestowcode/dartoptions
+  - buf.build/bestowcode/coresdk
+  - buf.build/googleapis/googleapis

@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package acmeinternal.example.counter.domain.v1;
+
+import "acmeapis/example/counter/v1/counter_api.proto";
+import "flakkadomain/v1/entity_domain.proto";
+import "google/protobuf/any.proto";
+message CounterState {
+  int32 value = 1;
+}
+
+message ValueIncreased {
+  int32 value = 1;
+}
+
+message ValueDecreased {
+  int32 value = 1;
+}
+
+message ValueReset {}
+
+service CounterEntityEventRegister {
+//  rpc ValueIncreased()
+}
+message CounterEntityDomain {
+  option (flakkadomain.v1.event_sourced_entity) = {};
+  acmeapis.example.counter.v1.CounterEntityApi entity_api = 1;
+  CounterState state = 2;
+  oneof events {
+    ValueIncreased value_increased = 3;
+    ValueDecreased value_decreased = 4;
+    ValueReset value_reset = 5;
+  }
+}

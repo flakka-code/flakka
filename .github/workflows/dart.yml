@@ -1,0 +1,187 @@
+# Created with package:mono_repo v6.6.1
+name: Dart CI
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+  schedule:
+    - cron: "0 0 * * 0"
+defaults:
+  run:
+    shell: bash
+env:
+  PUB_ENVIRONMENT: bot.github
+permissions: read-all
+
+jobs:
+  job_001:
+    name: mono_repo self validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cache Pub hosted dependencies
+        uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84
+        with:
+          path: "~/.pub-cache/hosted"
+          key: "os:ubuntu-latest;pub-cache-hosted;sdk:stable"
+          restore-keys: |
+            os:ubuntu-latest;pub-cache-hosted
+            os:ubuntu-latest
+      - name: Setup Dart SDK
+        uses: dart-lang/setup-dart@b64355ae6ca0b5d484f0106a033dd1388965d06d
+        with:
+          sdk: stable
+      - id: checkout
+        name: Checkout repository
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - name: mono_repo self validate
+        run: dart pub global activate mono_repo 6.6.1
+      - name: mono_repo self validate
+        run: dart pub global run mono_repo generate --validate
+  job_002:
+    name: "analyze_and_format; `dart analyze`"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cache Pub hosted dependencies
+        uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84
+        with:
+          path: "~/.pub-cache/hosted"
+          key: "os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:core_aggregate/packages/core_aggregate/core_aggregate_analyzer;commands:analyze"
+          restore-keys: |
+            os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:core_aggregate/packages/core_aggregate/core_aggregate_analyzer
+            os:ubuntu-latest;pub-cache-hosted;sdk:dev
+            os:ubuntu-latest;pub-cache-hosted
+            os:ubuntu-latest
+      - name: Setup Dart SDK
+        uses: dart-lang/setup-dart@b64355ae6ca0b5d484f0106a033dd1388965d06d
+        with:
+          sdk: dev
+      - id: checkout
+        name: Checkout repository
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - id: core_aggregate_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade
+        name: core_aggregate/packages/core_aggregate/core_aggregate_analyzer; dart pub upgrade
+        run: dart pub upgrade
+        if: "always() && steps.checkout.conclusion == 'success'"
+        working-directory: core_aggregate/packages/core_aggregate/core_aggregate_analyzer
+      - name: core_aggregate/packages/core_aggregate/core_aggregate_analyzer; dart analyze
+        run: dart analyze
+        if: "always() && steps.core_aggregate_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade.conclusion == 'success'"
+        working-directory: core_aggregate/packages/core_aggregate/core_aggregate_analyzer
+  job_003:
+    name: "analyze_and_format; `dart format --output=none --set-exit-if-changed .`"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cache Pub hosted dependencies
+        uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84
+        with:
+          path: "~/.pub-cache/hosted"
+          key: "os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:core_aggregate/packages/core_aggregate/core_aggregate_analyzer;commands:format"
+          restore-keys: |
+            os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:core_aggregate/packages/core_aggregate/core_aggregate_analyzer
+            os:ubuntu-latest;pub-cache-hosted;sdk:dev
+            os:ubuntu-latest;pub-cache-hosted
+            os:ubuntu-latest
+      - name: Setup Dart SDK
+        uses: dart-lang/setup-dart@b64355ae6ca0b5d484f0106a033dd1388965d06d
+        with:
+          sdk: dev
+      - id: checkout
+        name: Checkout repository
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - id: core_aggregate_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade
+        name: core_aggregate/packages/core_aggregate/core_aggregate_analyzer; dart pub upgrade
+        run: dart pub upgrade
+        if: "always() && steps.checkout.conclusion == 'success'"
+        working-directory: core_aggregate/packages/core_aggregate/core_aggregate_analyzer
+      - name: "core_aggregate/packages/core_aggregate/core_aggregate_analyzer; dart format --output=none --set-exit-if-changed ."
+        run: "dart format --output=none --set-exit-if-changed ."
+        if: "always() && steps.core_aggregate_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade.conclusion == 'success'"
+        working-directory: core_aggregate/packages/core_aggregate/core_aggregate_analyzer
+  job_004:
+    name: "unit_test; `dart test`"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cache Pub hosted dependencies
+        uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84
+        with:
+          path: "~/.pub-cache/hosted"
+          key: "os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:core_aggregate/packages/core_aggregate/core_aggregate_analyzer;commands:test"
+          restore-keys: |
+            os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:core_aggregate/packages/core_aggregate/core_aggregate_analyzer
+            os:ubuntu-latest;pub-cache-hosted;sdk:dev
+            os:ubuntu-latest;pub-cache-hosted
+            os:ubuntu-latest
+      - name: Setup Dart SDK
+        uses: dart-lang/setup-dart@b64355ae6ca0b5d484f0106a033dd1388965d06d
+        with:
+          sdk: dev
+      - id: checkout
+        name: Checkout repository
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - id: core_aggregate_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade
+        name: core_aggregate/packages/core_aggregate/core_aggregate_analyzer; dart pub upgrade
+        run: dart pub upgrade
+        if: "always() && steps.checkout.conclusion == 'success'"
+        working-directory: core_aggregate/packages/core_aggregate/core_aggregate_analyzer
+      - name: core_aggregate/packages/core_aggregate/core_aggregate_analyzer; dart test
+        run: dart test
+        if: "always() && steps.core_aggregate_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade.conclusion == 'success'"
+        working-directory: core_aggregate/packages/core_aggregate/core_aggregate_analyzer
+    needs:
+      - job_001
+      - job_002
+      - job_003
+  job_005:
+    name: "cron; `dart test`"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cache Pub hosted dependencies
+        uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84
+        with:
+          path: "~/.pub-cache/hosted"
+          key: "os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:core_aggregate/packages/core_aggregate/core_aggregate_analyzer;commands:test"
+          restore-keys: |
+            os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:core_aggregate/packages/core_aggregate/core_aggregate_analyzer
+            os:ubuntu-latest;pub-cache-hosted;sdk:dev
+            os:ubuntu-latest;pub-cache-hosted
+            os:ubuntu-latest
+      - name: Setup Dart SDK
+        uses: dart-lang/setup-dart@b64355ae6ca0b5d484f0106a033dd1388965d06d
+        with:
+          sdk: dev
+      - id: checkout
+        name: Checkout repository
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - id: core_aggregate_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade
+        name: core_aggregate/packages/core_aggregate/core_aggregate_analyzer; dart pub upgrade
+        run: dart pub upgrade
+        if: "always() && steps.checkout.conclusion == 'success'"
+        working-directory: core_aggregate/packages/core_aggregate/core_aggregate_analyzer
+      - name: core_aggregate/packages/core_aggregate/core_aggregate_analyzer; dart test
+        run: dart test
+        if: "always() && steps.core_aggregate_packages_core_aggregate_core_aggregate_analyzer_pub_upgrade.conclusion == 'success'"
+        working-directory: core_aggregate/packages/core_aggregate/core_aggregate_analyzer
+    needs:
+      - job_001
+      - job_002
+      - job_003
+      - job_004
+  job_006:
+    name: Notify failure
+    runs-on: ubuntu-latest
+    if: "(github.event_name == 'push' || github.event_name == 'schedule') && failure()"
+    steps:
+      - run: |
+          curl -H "Content-Type: application/json" -X POST -d \
+            "{'text':'Build failed! ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}'}" \
+            "${CHAT_WEBHOOK_URL}"
+        env:
+          CHAT_WEBHOOK_URL: "${{ secrets.BUILD_AND_TEST_TEAM_CHAT_WEBHOOK_URL }}"
+    needs:
+      - job_001
+      - job_002
+      - job_003
+      - job_004
+      - job_005

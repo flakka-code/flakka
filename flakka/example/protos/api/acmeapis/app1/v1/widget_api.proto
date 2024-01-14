@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package acmeapis.app1.v1;
+import 'dart_options/dart_options.proto';
+service WidgetService {
+  rpc SetPropA(SetPropARequest) returns (SetPropAResponse);
+}
+
+message SetPropARequest {
+  string value = 1;
+}
+
+message SetPropAResponse {
+}

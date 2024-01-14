@@ -1,0 +1,3 @@
+include: package:core_analysis/analysis_options_dev.yaml
+analyzer:
+  exclude: [bricks/**]

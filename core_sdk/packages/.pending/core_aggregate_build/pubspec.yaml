@@ -1,0 +1,28 @@
+name: core_aggregate_build
+description: A dart code builder for a Core Aggregate
+version: 0.1.0+1
+
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+
+dependencies:
+  analyzer:
+  core_protoc:
+  build:
+  built_value:
+  built_collection:
+  code_builder:
+  dart_style:
+  grpc:
+  protobuf:
+  protoc_plugin: 
+  rxdart:
+dev_dependencies:
+  build_runner:
+  build_test:
+  built_value_generator: 
+  core_analysis:
+  mocktail: ^1.0.0
+  test: ^1.19.2

@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/class-diagram
+abstract class Service
+abstract class A1ServiceBase extends Service
+abstract class A1ServiceHandlerBase
+abstract class A1ServiceDelegateBase<Adapter> extends A1ServiceBase {
++ adapterProvider
+}
+note left of A1ServiceDelegateBase : [Generated] Stubs methods with call to get Adapter,
+abstract class AdapterProvider<Adapter>{
+  get(CallMetadata)
+}
+abstract class AdapterFactory<Adapter>
+class A1AdapterProvider extends AdapterProvider
+class A1AdapterFactory extends AdapterFactory
+class A1ServiceDelegate{
+
+}
+class A1ServiceDelegate extends A1ServiceDelegateBase
+A1ServiceDelegate *- A1AdapterProvider
+class A1Adapter
+A1AdapterProvider o- A1Adapter
+A1ServiceDelegate ..> A1Adapter : defers_to
+A1AdapterProvider *- A1AdapterFactory
+A1AdapterFactory ..> A1Adapter : creates
+@enduml
