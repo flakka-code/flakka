@@ -1,14 +1,11 @@
 version: 2
 enable-beta-ecosystems: true
 updates:
-
-  - package-ecosystem: "pub"
-    directory: "/integration/development/calculator"
+  - package-ecosystem: "github-actions"
+    directory: "/"
     schedule:
       interval: "daily"
-
   - package-ecosystem: "pub"
-    directory: "/integration/integration_test_runner"
+    directory: "/"
     schedule:
       interval: "daily"
-
