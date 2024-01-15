@@ -1,0 +1,32 @@
+// This is the public API offered by your entity.
+syntax = "proto3";
+
+package acmedomain.example.counter.v1;
+
+message CounterState {
+  int32 value = 1;
+}
+
+message ValueIncreased {
+  int32 value = 1;
+}
+
+message ValueDecreased {
+  int32 value = 1;
+}
+
+message ValueReset {}
+
+service CounterEntityEventRegister {
+  //  rpc ValueIncreased()
+}
+message CounterEntityDomain {
+//  option (flakkadomain.v1.event_sourced_entity) = {};
+  acmeapis.example.counter.v1.CounterEntityApi entity_api = 1;
+  CounterState state = 2;
+  oneof events {
+    ValueIncreased value_increased = 3;
+    ValueDecreased value_decreased = 4;
+    ValueReset value_reset = 5;
+  }
+}
