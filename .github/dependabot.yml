@@ -3,21 +3,7 @@ enable-beta-ecosystems: true
 updates:
 
   - package-ecosystem: "pub"
-    directory: "/packages/test1"
-    schedule:
-      interval: "daily"
-
-version: 2
-enable-beta-ecosystems: true
-updates:
-
-  - package-ecosystem: "pub"
     directory: "/integration/integration_test_runner"
-    schedule:
-      interval: "daily"
-
-  - package-ecosystem: "pub"
-    directory: "/packages/test1"
     schedule:
       interval: "daily"
 

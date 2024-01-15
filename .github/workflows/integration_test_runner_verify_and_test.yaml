@@ -30,4 +30,4 @@ jobs:
       working_directory: integration/integration_test_runner
       min_coverage: 140
       flutter_channel: stable
-      flutter_version: stable
+      flutter_version: 3.13.6
