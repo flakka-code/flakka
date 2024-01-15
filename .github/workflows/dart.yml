@@ -1,0 +1,163 @@
+# Created with package:mono_repo v6.6.1
+name: Dart CI
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+  schedule:
+    - cron: "0 0 * * 0"
+defaults:
+  run:
+    shell: bash
+env:
+  PUB_ENVIRONMENT: bot.github
+  FOO: BAR
+permissions: read-all
+
+jobs:
+  job_001:
+    name: "unit_test; Dart 3.0.0; `dart test`"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cache Pub hosted dependencies
+        uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84
+        with:
+          path: "~/.pub-cache/hosted"
+          key: "os:ubuntu-latest;pub-cache-hosted;sdk:3.0.0;packages:integration/integration_builder;commands:test"
+          restore-keys: |
+            os:ubuntu-latest;pub-cache-hosted;sdk:3.0.0;packages:integration/integration_builder
+            os:ubuntu-latest;pub-cache-hosted;sdk:3.0.0
+            os:ubuntu-latest;pub-cache-hosted
+            os:ubuntu-latest
+      - name: Setup Dart SDK
+        uses: dart-lang/setup-dart@b64355ae6ca0b5d484f0106a033dd1388965d06d
+        with:
+          sdk: "3.0.0"
+      - id: checkout
+        name: Checkout repository
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - id: integration_integration_builder_pub_upgrade
+        name: integration/integration_builder; dart pub upgrade
+        run: dart pub upgrade
+        if: "always() && steps.checkout.conclusion == 'success'"
+        working-directory: integration/integration_builder
+      - name: integration/integration_builder; dart test
+        run: dart test
+        if: "always() && steps.integration_integration_builder_pub_upgrade.conclusion == 'success'"
+        working-directory: integration/integration_builder
+  job_002:
+    name: "unit_test; Dart dev; `dart test`"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cache Pub hosted dependencies
+        uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84
+        with:
+          path: "~/.pub-cache/hosted"
+          key: "os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:integration/integration_builder;commands:test"
+          restore-keys: |
+            os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:integration/integration_builder
+            os:ubuntu-latest;pub-cache-hosted;sdk:dev
+            os:ubuntu-latest;pub-cache-hosted
+            os:ubuntu-latest
+      - name: Setup Dart SDK
+        uses: dart-lang/setup-dart@b64355ae6ca0b5d484f0106a033dd1388965d06d
+        with:
+          sdk: dev
+      - id: checkout
+        name: Checkout repository
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - id: integration_integration_builder_pub_upgrade
+        name: integration/integration_builder; dart pub upgrade
+        run: dart pub upgrade
+        if: "always() && steps.checkout.conclusion == 'success'"
+        working-directory: integration/integration_builder
+      - name: integration/integration_builder; dart test
+        run: dart test
+        if: "always() && steps.integration_integration_builder_pub_upgrade.conclusion == 'success'"
+        working-directory: integration/integration_builder
+  job_003:
+    name: "cron; Dart 3.0.0; `dart test`"
+    runs-on: ubuntu-latest
+    if: "github.event_name == 'schedule'"
+    steps:
+      - name: Cache Pub hosted dependencies
+        uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84
+        with:
+          path: "~/.pub-cache/hosted"
+          key: "os:ubuntu-latest;pub-cache-hosted;sdk:3.0.0;packages:integration/integration_builder;commands:test"
+          restore-keys: |
+            os:ubuntu-latest;pub-cache-hosted;sdk:3.0.0;packages:integration/integration_builder
+            os:ubuntu-latest;pub-cache-hosted;sdk:3.0.0
+            os:ubuntu-latest;pub-cache-hosted
+            os:ubuntu-latest
+      - name: Setup Dart SDK
+        uses: dart-lang/setup-dart@b64355ae6ca0b5d484f0106a033dd1388965d06d
+        with:
+          sdk: "3.0.0"
+      - id: checkout
+        name: Checkout repository
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - id: integration_integration_builder_pub_upgrade
+        name: integration/integration_builder; dart pub upgrade
+        run: dart pub upgrade
+        if: "always() && steps.checkout.conclusion == 'success'"
+        working-directory: integration/integration_builder
+      - name: integration/integration_builder; dart test
+        run: dart test
+        if: "always() && steps.integration_integration_builder_pub_upgrade.conclusion == 'success'"
+        working-directory: integration/integration_builder
+    needs:
+      - job_001
+      - job_002
+  job_004:
+    name: "cron; Dart dev; `dart test`"
+    runs-on: ubuntu-latest
+    if: "github.event_name == 'schedule'"
+    steps:
+      - name: Cache Pub hosted dependencies
+        uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84
+        with:
+          path: "~/.pub-cache/hosted"
+          key: "os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:integration/integration_builder;commands:test"
+          restore-keys: |
+            os:ubuntu-latest;pub-cache-hosted;sdk:dev;packages:integration/integration_builder
+            os:ubuntu-latest;pub-cache-hosted;sdk:dev
+            os:ubuntu-latest;pub-cache-hosted
+            os:ubuntu-latest
+      - name: Setup Dart SDK
+        uses: dart-lang/setup-dart@b64355ae6ca0b5d484f0106a033dd1388965d06d
+        with:
+          sdk: dev
+      - id: checkout
+        name: Checkout repository
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - id: integration_integration_builder_pub_upgrade
+        name: integration/integration_builder; dart pub upgrade
+        run: dart pub upgrade
+        if: "always() && steps.checkout.conclusion == 'success'"
+        working-directory: integration/integration_builder
+      - name: integration/integration_builder; dart test
+        run: dart test
+        if: "always() && steps.integration_integration_builder_pub_upgrade.conclusion == 'success'"
+        working-directory: integration/integration_builder
+    needs:
+      - job_001
+      - job_002
+  job_005:
+    name: Notify failure
+    runs-on: ubuntu-latest
+    if: failure()
+    steps:
+      - run: |
+          curl -H "Content-Type: application/json" -X POST -d \
+            "{'text':'Build failed! ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}'}" \
+            "${CHAT_WEBHOOK_URL}"
+        env:
+          CHAT_WEBHOOK_URL: "${{ secrets.CHAT_WEBHOOK_URL }}"
+    needs:
+      - job_001
+      - job_002
+      - job_003
+      - job_004
